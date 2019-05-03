@@ -62,7 +62,7 @@ Stretch goals:
   E-mail based registry
   
 Technologies:
-  Front end: Angular 7
+  Front end: Angular 7/Spring
   Back end: Java w/Hibernate & Jenkins
   Database: JDBC AWS Server (RDS)
   Host: AWS EC2
