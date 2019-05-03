@@ -14,7 +14,7 @@
 		</property>
 		
 		<property name="hibernate.connection.url">
-			jdbc:oracle:thin@meisystem.chdhameuynna.us-east-2.rds.amazonaws.com:1521:MEISYS
+			jdbc:oracle:thin:@meisystem.chdhameuynna.us-east-2.rds.amazonaws.com:1521:MEISYS
 		</property>
 		
 		<property name="hibernate.connection.username">
@@ -37,6 +37,8 @@
 		<!-- This is what tells hibernate how to deal with the database -->
 		<property name="hibernate.hbm2ddl.auto">
 			update
+			<!-- this could be changed to 'create' for testing purposes, not sure what the difference is..
+				i think it scraps the changes made from the driver class(tester class).. -->
 		</property>
 		
 		<!-- Mappings -->
