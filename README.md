@@ -47,7 +47,7 @@ User stories(full sentences) include:
   Admin:
     an admin should be able to login.
     an admin should be able to approve/deny major change requests.
-    an admin should be able to change all schedules(essentially has override permission).
+    an admin should be able to change all schedules(essentially has override permission)(this can be split into a lot of stories).
     an admin should be able to ...
     an admin should be able to logout.
   
@@ -58,7 +58,7 @@ User stories(full sentences) include:
   Advisor: Approve of and manipulate schedule imposements. 
 
 Stretch goals:
-  
+  an advisor should be able to send a message(maybe via email) to students
   E-mail based registry
   
 Technologies:
