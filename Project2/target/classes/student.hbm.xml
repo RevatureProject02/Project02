@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Any attributes here apply to the actual SQL table. If you don't include them, the name will
+		be assumed off of class name and attributes -->
+		<class name="model.Student" table="Student">
+			<meta attribute="class-description">
+				This is a table about Bears!
+			</meta>
+			<!--'name' correlates to the java variable. 'type' will let hibernate know what to convert
+				the SQL type into for java-->
+			<!-- id is for your primary key -->
+			<id name="id" type="int" column="s_id">
+				<generator class="native">
+					<param name="sequence">MY_SEQ</param>
+				</generator>
+			</id>
+			<property name="name" type="string" not-null="true"/>
+			<property name="age" type="int"/>
+		</class>
+</hibernate-mapping>
