@@ -65,17 +65,21 @@ Technologies:
   Front end: Angular 7
   Back end: Java w/Hibernate & Jenkins
   Database: JDBC AWS Server (RDS)
+  Host: AWS EC2
   GitBash: Git Hub
   Documentation: Google Chrome
+  API: Google Calendar
   
 Workflow:
 Agile 
 Sprint 1: TBA
 -----------------------------------------------------------------------------
+
+
 DB Heriarchy:
 Field
   Has a Student: 
-    Has many classes
+    Has many Courses
         has a Proffessor
         
 Field 
