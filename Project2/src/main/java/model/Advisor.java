@@ -1,57 +1,45 @@
 package model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Student")
-public class Student
+@Table(name="Advisor")
+public class Advisor 
 {
 	@Id
-	@Column(name="s_id")
-	@SequenceGenerator(sequenceName="student_seq",name="s_seq")
-	@GeneratedValue(generator="s_seq",strategy=GenerationType.SEQUENCE)
+	@Column(name="adv_id")
+	@SequenceGenerator(sequenceName="advisor_seq",name="adv_seq")
+	@GeneratedValue(generator="adv_seq",strategy=GenerationType.SEQUENCE)
 	private int id;
 	
-	@Column(name="s_name")
+	@Column(name="adv_name")
 	private String name;
 	
-	@Column(name="s_age")
+	@Column(name="adv_age")
 	private int age;
 	
-	@Column(name="s_username")
+	@Column(name="adv_username")
 	private String username;
 	
-	@Column(name="s_password")
+	@Column(name="adv_password")
 	private String password;
 	
-	@Column(name="s_email")
+	@Column(name="adv_email")
 	private String email;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name="student_course_jt",
-	joinColumns = @JoinColumn(name = "s_id"),
-	inverseJoinColumns=@JoinColumn(name="c_id"))
-	private List<Course> Courses;
 
-	public Student() {
+	
+	public Advisor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Student(String name, int age, String username, String password, String email) {
+	public Advisor(String name, int age, String username, String password, String email) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -60,7 +48,8 @@ public class Student
 		this.email = email;
 	}
 	
-	public Student(int id, String name, int age, String username, String password, String email) {
+
+	public Advisor(int id, String name, int age, String username, String password, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -69,8 +58,6 @@ public class Student
 		this.password = password;
 		this.email = email;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -112,29 +99,20 @@ public class Student
 		this.password = password;
 	}
 
-	public List<Course> getCourses() {
-		return Courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		Courses = courses;
-	}
-
 	public String getEmail() {
 		return email;
 	}
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", username=" + username + ", password="
-				+ password + ", email=" + email + ", Courses=" + Courses + "]";
+		return "Advisor [id=" + id + ", name=" + name + ", age=" + age + ", username=" + username + ", password="
+				+ password + ", email=" + email + "]";
 	}
+	
 	
 	
 }

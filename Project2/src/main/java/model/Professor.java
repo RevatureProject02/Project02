@@ -15,43 +15,43 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Student")
-public class Student
+@Table(name="Professor")
+public class Professor 
 {
 	@Id
-	@Column(name="s_id")
-	@SequenceGenerator(sequenceName="student_seq",name="s_seq")
-	@GeneratedValue(generator="s_seq",strategy=GenerationType.SEQUENCE)
+	@Column(name="p_id")
+	@SequenceGenerator(sequenceName="professor_seq",name="p_seq")
+	@GeneratedValue(generator="p_seq",strategy=GenerationType.SEQUENCE)
 	private int id;
 	
-	@Column(name="s_name")
+	@Column(name="p_name")
 	private String name;
 	
-	@Column(name="s_age")
+	@Column(name="p_age")
 	private int age;
 	
-	@Column(name="s_username")
+	@Column(name="p_username")
 	private String username;
 	
-	@Column(name="s_password")
+	@Column(name="p_password")
 	private String password;
 	
-	@Column(name="s_email")
+	@Column(name="p_email")
 	private String email;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name="student_course_jt",
-	joinColumns = @JoinColumn(name = "s_id"),
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="professor_course_jt",
+	joinColumns = @JoinColumn(name="p_id"),
 	inverseJoinColumns=@JoinColumn(name="c_id"))
 	private List<Course> Courses;
 
-	public Student() {
+	public Professor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Student(String name, int age, String username, String password, String email) {
+	
+	public Professor(String name, int age, String username, String password, String email) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -59,8 +59,9 @@ public class Student
 		this.password = password;
 		this.email = email;
 	}
-	
-	public Student(int id, String name, int age, String username, String password, String email) {
+
+
+	public Professor(int id, String name, int age, String username, String password, String email) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -69,56 +70,57 @@ public class Student
 		this.password = password;
 		this.email = email;
 	}
-
 
 
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public int getAge() {
 		return age;
 	}
 
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 
 	public String getUsername() {
 		return username;
 	}
 
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 
 	public String getPassword() {
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public List<Course> getCourses() {
-		return Courses;
-	}
-
-	public void setCourses(List<Course> courses) {
-		Courses = courses;
-	}
 
 	public String getEmail() {
 		return email;
@@ -130,11 +132,23 @@ public class Student
 	}
 
 
+	public List<Course> getCourses() {
+		return Courses;
+	}
+
+
+	public void setCourses(List<Course> courses) {
+		Courses = courses;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", username=" + username + ", password="
+		return "Professor [id=" + id + ", name=" + name + ", age=" + age + ", username=" + username + ", password="
 				+ password + ", email=" + email + ", Courses=" + Courses + "]";
 	}
+
+	
 	
 	
 }

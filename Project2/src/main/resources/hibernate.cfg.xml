@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-
 	<session-factory>
-	
 		<property name="hibernate.connection.driver_class">
-			oracle.jdbc.OracleDriver
+		oracle.jdbc.OracleDriver
 		</property>
 		
-		<property name="hibernate.dialect">
-			org.hibernate.dialect.Oracle10gDialect
+		<property name = "hibernate.dialect">
+		org.hibernate.dialect.Oracle10gDialect
 		</property>
 		
 		<property name="hibernate.connection.url">
 			jdbc:oracle:thin:@meisystem.chdhameuynna.us-east-2.rds.amazonaws.com:1521:MEISYS
-		</property>
+		</property><!-- MEISYS -->
 		
 		<property name="hibernate.connection.username">
 			meimaster
@@ -37,14 +34,19 @@
 		<!-- This is what tells hibernate how to deal with the database -->
 		<property name="hibernate.hbm2ddl.auto">
 			update
+			
 			<!-- this could be changed to 'create' for testing purposes, not sure what the difference is..
 				i think it scraps the changes made from the driver class(tester class).. -->
+			<!-- Update initiates changes utilizing a system thats already in place
+			create generates a new system every time -->
 		</property>
 		
 		<!-- Mappings -->
-		<mapping resource="student.hbm.xml"/>
-	
+		<!--<mapping resource="student.hbm.xml"/>  This is linked to student.hbm.xml its unlikely we wil use it, but i wont delete it just in case?-->
+		<mapping class = "model.Student"/>
+		<mapping class = "model.Professor"/>
+		<mapping class = "model.Administrator"/>
+		<mapping class = "model.Advisor"/>
+		<mapping class = "model.Course"/>
 	</session-factory>
-
-
 </hibernate-configuration>
