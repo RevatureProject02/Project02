@@ -41,6 +41,7 @@ User stories(full sentences) include:
     an advisor should be able to view their schedule.
     an advisor should be able to set their appointment availability.
     an advisor should be able to send a message(maybe via email) to students
+    an advisor should be able to create a report after each appointment
     an advisor should be able to ...
     an advisor should be able to logout.
     
@@ -77,11 +78,11 @@ Sprint 1: TBA
 
 
 DB Heriarchy:
-Field
+major //has many students
   Has a Student: 
     Has many Courses
         has a Proffessor
         
-Field 
-  Has a Dean
-  Has an advisor
+major // 
+  Has a Dean 
+  Has an advisor //maybe many advisors per major
