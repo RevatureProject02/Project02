@@ -1,8 +1,8 @@
-package Services;
+package services;
 
 import java.util.List;
 
-import Dao.CourseDaoImpl;
+import dao.CourseDaoImpl;
 import model.Course;
 
 public class CourseServices 

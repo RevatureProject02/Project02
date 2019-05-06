@@ -7,16 +7,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Services.AdministratorServices;
-import Services.AdvisorServices;
-import Services.CourseServices;
-import Services.ProfessorServices;
-import Services.StudentServices;
 import model.Administrator;
 import model.Advisor;
 import model.Course;
 import model.Professor;
 import model.Student;
+import services.AdministratorServices;
+import services.AdvisorServices;
+import services.CourseServices;
+import services.ProfessorServices;
+import services.StudentServices;
 
 class DaoTest  {
 	AdministratorServices ads = new AdministratorServices();

@@ -1,8 +1,8 @@
-package Services;
+package services;
 
 import java.util.List;
 
-import Dao.AdministratorDaoImpl;
+import dao.AdministratorDaoImpl;
 import model.Administrator;
 
 public class AdministratorServices 

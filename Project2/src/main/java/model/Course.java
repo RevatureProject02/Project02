@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.google.api.client.util.DateTime;
+
 @Entity
 @Table(name="Course")
 public class Course 
@@ -20,6 +22,12 @@ public class Course
 	
 	@Column(name="c_name")
 	private String name;
+	
+	@Column(name="c_time")
+	private DateTime time;
+	
+	@Column(name="c_location")
+	private String location;
 
 	public Course() {
 		super();
