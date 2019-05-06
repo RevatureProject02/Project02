@@ -4,7 +4,6 @@
   <artifactId>Project2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -25,6 +24,22 @@
             <groupId>com.oracle</groupId>
             <version>12.1.0</version>
         </dependency>
+        <dependency>
+        <groupId>com.google.api-client</groupId>
+        <artifactId>google-api-client</artifactId>
+        <version>1.23.0</version>
+		</dependency>
+		        <dependency>
+        <groupId>com.google.oauth-client</groupId>
+        <artifactId>google-oauth-client-jetty</artifactId>
+        <version>1.23.0</version>
+		</dependency>
+		        <dependency>
+        <groupId>com.google.apis</groupId>
+        <artifactId>google-api-services-calendar</artifactId>
+        <version>v3-rev305-1.23.0</version>
+		</dependency>
+
     </dependencies>
     
 </project>
