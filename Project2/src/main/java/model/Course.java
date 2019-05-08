@@ -28,15 +28,21 @@ public class Course
 	
 	@Column(name="c_location")
 	private String location;
+	
+	@Column(name="c_days")
+	private String days;
 
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Course(String name) {
+	public Course(String name, DateTime time, String location, String days) {
 		super();
 		this.name = name;
+		this.time = time;
+		this.location = location;
+		this.days = days;
 	}
 
 	public int getId() {
@@ -59,6 +65,20 @@ public class Course
 	public String toString() {
 		return "Course [id=" + id + ", name=" + name + "]";
 	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public DateTime getTime() {
+		return time;
+	}
+
+	public String getDays() {
+		return days;
+	}
+
+
 	
 	
 }
