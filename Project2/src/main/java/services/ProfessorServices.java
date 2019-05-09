@@ -1,8 +1,8 @@
-package Services;
+package services;
 
 import java.util.List;
 
-import Dao.ProfessorDaoImpl;
+import dao.ProfessorDaoImpl;
 import model.Professor;
 
 public class ProfessorServices 

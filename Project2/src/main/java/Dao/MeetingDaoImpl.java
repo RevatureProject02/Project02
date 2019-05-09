@@ -5,20 +5,22 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import model.Student;
+import model.Meeting;
 import util.HibernateUtil;
 
-public class StudentDaoImpl implements StudentDao {
-
+public class MeetingDaoImpl implements MeetingDao {
+	
+	//remember to make sure that google stores the same meeting id as us 
+	//by sending the id over in the events.Insert()
 	@Override
-	public int insertStudent(Student s)
-	{
+	public int insertMeeting(Meeting m) {
+		
 		Session session = HibernateUtil.getSession();
 		int id = 0;
 		try
 		{
 			session.beginTransaction();
-			id = (Integer)session.save(s);
+			id = (Integer)session.save(m);
 			session.getTransaction().commit();
 		}
 		catch(HibernateException e)
@@ -34,13 +36,12 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public List<Student> selectAllStudent()
-	{
+	public List<Meeting> selectAllMeetings() {
 		Session session = HibernateUtil.getSession();
-		List<Student> students = null;
+		List<Meeting> meetings = null;
 		try
 		{
-			students = session.createQuery("FROM Student").list();
+			meetings = session.createQuery("FROM Meeting").list();
 		}
 		catch(HibernateException e)
 		{
@@ -50,17 +51,17 @@ public class StudentDaoImpl implements StudentDao {
 		{
 			session.close();
 		}
-		return students;
+		return meetings;
 	}
 
 	@Override
-	public Student selectStudentById(int id)
+	public Meeting selectMeetingById(int id)
 	{
 		Session session = HibernateUtil.getSession();
-		Student s = null;
+		Meeting m = null;
 		try
 		{
-			s = (Student) session.get(Student.class, id);
+			m = (Meeting) session.get(Meeting.class, id);
 		}
 		catch(HibernateException e)
 		{
@@ -70,26 +71,23 @@ public class StudentDaoImpl implements StudentDao {
 		{
 			session.close();
 		}
-		return s;
+		return m;
 	}
 
+	//think i need to check for nulls in Meeting m here.. could go without if we do validation that doesnt allow
+	//any meetings to be inserted with null fields
 	@Override
-	public void updateStudent(Student change) 
-	{
+	public void updateMeeting(Meeting change) {
 		Session session = HibernateUtil.getSession();
-		Student s = null;
+		Meeting m = null;
 		try
 		{
 			session.beginTransaction();
-			s = (Student) session.get(Student.class, change.getId());
-			s.setName(change.getName());
-			s.setAge(change.getAge());
-			s.setUsername(change.getUsername());
-			s.setPassword(change.getPassword());
-			s.setEmail(change.getEmail());
-			s.setCourses(change.getCourses());
+			m = (Meeting) session.get(Meeting.class, change.getId());
+			m.setSummary(change.getSummary());
+			m.setLocation(change.getLocation());
+			m.setTime(change.getTime());
 			session.getTransaction().commit();
-		
 		}
 		catch(HibernateException e)
 		{
@@ -100,15 +98,17 @@ public class StudentDaoImpl implements StudentDao {
 		{
 			session.close();
 		}
+		
 	}
 
 	@Override
-	public void deleteStudentById(int id) {
+	public void deleteMeetingById(int id) 
+	{
 		Session session = HibernateUtil.getSession();
 		try
 		{
 			session.beginTransaction();
-			session.delete(session.get(Student.class, id));
+			session.delete(session.get(Meeting.class, id));
 			session.getTransaction().commit();
 		}
 		catch(HibernateException e)
@@ -124,3 +124,4 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 }
+

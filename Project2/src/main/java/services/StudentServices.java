@@ -1,8 +1,8 @@
-package Services;
+package services;
 
 import java.util.List;
 
-import Dao.StudentDaoImpl;
+import dao.StudentDaoImpl;
 import model.Student;
 
 public class StudentServices 
