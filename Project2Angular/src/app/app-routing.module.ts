@@ -1,36 +1,42 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-<<<<<<< HEAD
 import { StudentGradesComponent } from './components/student-grades/student-grades.component';
-
-const routes: Routes = [
-
-  {
-    path: 'student-grades',
-    component: StudentGradesComponent
-=======
+import { CreateAssignmentsComponent } from './components/create-assignments/create-assignments.component';
+import { GradeAssignmentsComponent } from './components/grade-assignments/grade-assignments.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+//Student navbar
   {
-    path: '',
-    component: LoginComponent
+    path: 'student-grades',
+    component: StudentGradesComponent
+  },
+//Admin navbar
+  {
+    path: 'create-assignments',
+    component: CreateAssignmentsComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'grade-assignments',
+    component: GradeAssignmentsComponent
   },
   {
     path: 'home',
     component: HomeComponent
   },
+  //Back to login page
+  {
+    path: "",
+    component: LoginComponent
+  },
   {
     path: '**',
-    redirectTo: 'login',
-    pathMatch: 'full'
->>>>>>> e01bbc3a9d6cd4f50db8bc64db26e7a9d1175a83
+    redirectTo: "login",
+    pathMatch:"full"
   }
+
+
 ];
 
 @NgModule({
