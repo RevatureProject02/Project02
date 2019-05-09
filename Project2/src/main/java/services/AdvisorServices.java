@@ -1,8 +1,8 @@
-package Services;
+package services;
 
 import java.util.List;
 
-import Dao.AdvisorDaoImpl;
+import dao.AdvisorDaoImpl;
 import model.Advisor;
 
 public class AdvisorServices 

@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
   flip1() {
     document.getElementById("form").style.transform = 'rotateY( 0deg)';
   }
+
+  loginUser(event){
+    console.log(event)
+  }
   constructor() { }
 
   ngOnInit() {

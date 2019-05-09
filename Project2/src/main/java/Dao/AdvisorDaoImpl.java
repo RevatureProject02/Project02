@@ -1,11 +1,9 @@
-package Dao;
+package dao;
 
 import java.util.List;
 
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import model.Advisor;
 import util.HibernateUtil;

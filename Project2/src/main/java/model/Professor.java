@@ -39,6 +39,9 @@ public class Professor
 	@Column(name="p_email")
 	private String email;
 	
+	@Column(name="p_office")
+	private int office;
+	
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="professor_course_jt",
 	joinColumns = @JoinColumn(name="p_id"),
@@ -51,17 +54,24 @@ public class Professor
 	}
 
 	
-	public Professor(String name, int age, String username, String password, String email) {
+	
+
+
+	public Professor(String name, int age, String username, String password, String email, int office) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.office = office;
 	}
 
 
-	public Professor(int id, String name, int age, String username, String password, String email) {
+
+
+
+	public Professor(int id, String name, int age, String username, String password, String email, int office) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -69,6 +79,18 @@ public class Professor
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.office = office;
+	}
+
+	
+
+	public int getOffice() {
+		return office;
+	}
+
+
+	public void setOffice(int office) {
+		this.office = office;
 	}
 
 

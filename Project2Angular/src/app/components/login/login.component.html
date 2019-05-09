@@ -1,22 +1,22 @@
 <div class="outcontainer">
-    
+  
         <div class="form" id="form">
             <div class="front">
                 <div class="left">
-                    
                         <div class="titel1">Are you a new user?</div>
                         <button class="btn2" (click)="flip()">Sign Up</button>
-                    
                 </div>
                 <div class="right">
+                    <form (submit)=loginUser($event)>
                     <input type="text" placeholder="Username"><br><br>
                     <input type="password" placeholder="Password"><br><br>
                     <button class="btn1">Login</button>
+                    </form>
                     <a href="#">Forgot Password?</a>
                 </div>
 
             </div>
-
+    
     <div class="back">
         
             <div class="left">
@@ -26,12 +26,14 @@
                
             </div>
             <div class="right">
+                <form>
                 <input type="text" placeholder="name"><br><br>
                 <input type="text" placeholder="email"><br><br>
                 <input type="password" placeholder="password"><br><br>
                 <button class="btn1">Register</button>
+                </form>
             </div>
         
     </div>
 </div>
-</div>
+
