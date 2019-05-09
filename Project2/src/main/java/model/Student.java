@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Student")
-public class Student
+public class Student	
 {
 	@Id
 	@Column(name="s_id")
