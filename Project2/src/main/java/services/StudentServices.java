@@ -1,39 +1,23 @@
 package services;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dao.StudentDaoImpl;
-import model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import model.Student;
+import repositories.StudentRepository;
+@Service
 public class StudentServices 
 {
-	StudentDaoImpl sd;
+	@Autowired
+	StudentRepository sr;
 	
-	public int addStudent(Student s)
+	public List<Student> getStudents()
 	{
-		sd = new StudentDaoImpl();
-		return sd.insertStudent(s);
+		List<Student> students = new ArrayList<Student>();
+		return sr.getStudents();
 	}
-	public List<Student> getAllStudents()
-	{
-		sd = new StudentDaoImpl();
-		return sd.selectAllStudent();
-	}
-	public Student getStudentById(int id)
-	{
-		sd = new StudentDaoImpl();
-		return sd.selectStudentById(id);
-	}
-	public void updateStudent(Student change)
-	{
-		sd = new StudentDaoImpl();
-	    sd.updateStudent(change);
-	}
-	public void deleteStudentById(int id)
-	{
-		sd = new StudentDaoImpl();
-		sd.deleteStudentById(id);
-	}
-	//view student calendar
 	
 }
