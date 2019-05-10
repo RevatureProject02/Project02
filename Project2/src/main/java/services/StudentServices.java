@@ -34,4 +34,6 @@ public class StudentServices
 		sd = new StudentDaoImpl();
 		sd.deleteStudentById(id);
 	}
+	//view student calendar
+	
 }
