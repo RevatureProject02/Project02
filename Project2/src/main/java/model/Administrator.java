@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Administrator")
-public class Administrator 
+public class Administrator implements Serializable
 {
 	@Id
 	@Column(name="ad_id")
@@ -19,6 +21,7 @@ public class Administrator
 	private int id;
 	
 	@Column(name="ad_name")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="ad_age")
