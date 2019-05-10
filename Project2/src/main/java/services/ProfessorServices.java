@@ -4,34 +4,30 @@ import java.util.List;
 
 import dao.ProfessorDaoImpl;
 import model.Professor;
+import repositories.ProfessorRepository;
 
 public class ProfessorServices 
 {
-	ProfessorDaoImpl pd;
+	ProfessorRepository pr;
 	
-	public int addProfessor(Professor p)
+	public int insertProfessor(Professor p)
 	{
-		pd = new ProfessorDaoImpl();
-		return pd.insertProfessor(p);
+		return pr.insertProfessor(p);
 	}
 	public List<Professor> getAllProfessors()
 	{
-		pd = new ProfessorDaoImpl();
-		return pd.selectAllProfessor();
+		return pr.selectAllProfessors();
 	}
 	public Professor getProfessorById(int id)
 	{
-		pd = new ProfessorDaoImpl();
-		return pd.selectProfessorById(id);
+		return pr.selectProfessorById(id);
 	}
 	public void updateProfessor(Professor change)
 	{
-		pd = new ProfessorDaoImpl();
-	    pd.updateProfessor(change);
+		pr.updateProfessor(change);
 	}
 	public void deleteProfessorById(int id)
 	{
-		pd = new ProfessorDaoImpl();
-		pd.deleteProfessorById(id);
+		pr.deleteProfessorById(id);
 	}
 }
