@@ -1,15 +1,11 @@
 package controllers;
 
-<<<<<<< HEAD
-public class AdvisorController {
-
-=======
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/advisor")
-public class AdvisorController 
+@RequestMapping("/professor")
+public class ProfessorController 
 {
 
 	//@Autowired
@@ -25,5 +21,4 @@ public class AdvisorController
 		 * url can also hold values using {} as an example
 		 * /{id} is a url that is an id
 		 */
->>>>>>> 10a4623c8f9711be0a931a5a482710b29b16ba9a
 }
