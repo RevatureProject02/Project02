@@ -19,7 +19,7 @@ import { ViewscheduleComponent } from './components/viewschedule/viewschedule.co
 import { SetavailabilityComponent } from './components/setavailability/setavailability.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 
 @NgModule({
@@ -38,8 +38,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ViewscheduleComponent, 
     SetavailabilityComponent, 
     LoginComponent, 
-    HomeComponent,
-    NavbarComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
