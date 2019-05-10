@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="Professor")
@@ -36,6 +37,7 @@ public class Professor
 	@Column(name="p_password")
 	private String password;
 	
+	@Pattern(regexp="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}")
 	@Column(name="p_email")
 	private String email;
 	

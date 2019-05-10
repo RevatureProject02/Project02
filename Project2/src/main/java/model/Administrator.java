@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="Administrator")
@@ -30,6 +31,7 @@ public class Administrator
 	@Column(name="ad_password")
 	private String password;
 	
+	@Pattern(regexp="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}")
 	@Column(name="ad_email")
 	private String email;
 
