@@ -12,15 +12,10 @@ import com.google.api.services.calendar.model.EventAttendee;
 import com.google.api.services.calendar.model.EventDateTime;
 
 import calenderapi.CalendarQuickstart;
-import dao.CourseDao;
-import dao.CourseDaoImpl;
-import dao.MeetingDao;
-import dao.MeetingDaoImpl;
 import model.Advisor;
 import model.Course;
 import model.Meeting;
 import model.Professor;
-import model.Student;
 
 public class EventFactory {
 
