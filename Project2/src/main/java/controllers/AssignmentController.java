@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Assignment;
-import model.Student;
 import services.AssignmentServices;
 
 @Controller
