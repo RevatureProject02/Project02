@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Scan for Spring beans -->
+	<context:component-scan
+		base-package="repositories, factory, jUnit_Testing, model, Services"></context:component-scan>
+
+	<!-- Use Annotations for MVC -->
+	<mvc:annotation-driven />
+
+	<!-- Hibernate config Goes here -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@meisystem.chdhameuynna.us-east-2.rds.amazonaws.com:1521:MEISYS" />
+		<property name="username" value="meimaster" />
+		<property name="password" value="!RevaturE!" />
+	</bean>
+
+	<!-- configure session factory bean -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<!-- <prop key="hibernate.show_sql">true</prop> -->
+				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+			</props>
+		</property>
+	</bean>
+	<!--Transaction Manager (Hibernate) makes all session transactions -->
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

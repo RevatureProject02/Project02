@@ -36,7 +36,7 @@ body{
 }
 .back{
     position: relative;
-    bottom: 350px;
+    bottom: 450px;
     transform: rotateY(-180deg);
 }
 
