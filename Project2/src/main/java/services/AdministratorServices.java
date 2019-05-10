@@ -1,37 +1,40 @@
-package services;
+package Services;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import dao.AdministratorDaoImpl;
-import model.Administrator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import model.Administrator;
+import repositories.AdministratorRepository;
+
+@Service
 public class AdministratorServices 
 {
-	AdministratorDaoImpl add;
+	@Autowired
+	AdministratorRepository ar;
 	
-	public int addAdministrator(Administrator a)
+	public void addAdministrator(Administrator a)
 	{
-		add = new AdministratorDaoImpl();
-		return add.insertAdministrator(a);
+		ar.insertAdministrator(a);
 	}
 	public List<Administrator> getAllAdministrators()
 	{
-		add = new AdministratorDaoImpl();
-		return add.selectAllAdministrator();
+		List<Administrator> admins = new ArrayList<>();
+		return ar.getAllAdministrators();
+		
 	}
 	public Administrator getAdministratorById(int id)
 	{
-		add = new AdministratorDaoImpl();
-		return add.selectAdministratorById(id);
+		return ar.getAdministratorById(id);
 	}
-	public void updateAdministrator(Administrator change)
+	public void updateAdministrator(Administrator a)
 	{
-		add = new AdministratorDaoImpl();
-	    add.updateAdministrator(change);
+	    ar.updateAdministrator(a);
 	}
 	public void deleteAdministratorById(int id)
 	{
-		add = new AdministratorDaoImpl();
-		add.deleteAdministratorById(id);
+		ar.deleteAdministratorById(id);
 	}
 }
