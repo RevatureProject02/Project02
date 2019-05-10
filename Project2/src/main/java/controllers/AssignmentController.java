@@ -13,60 +13,48 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import model.Course;
-import services.CourseServices;
+import model.Assignment;
+import model.Student;
+import services.AssignmentServices;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/course")
-public class CourseController 
+@RequestMapping("/Assignments")
+public class AssignmentController 
 {
-
-	//@Autowired
-	//Service s;
-	//Replace this with the service class
-
-	// this works the same way
-	// @GetMapping("/all")
-		//@RequestMapping(value = "/url", method = Requestmethod.GET / POST)
-		//public ResponseEntity<ReturnObject> getstuff(@PathVariable key)
-		//return new ResponseEntity<ReturnObject>(repository.method(), HttpStatus.value)
-		/*
-		 * url can also hold values using {} as an example
-		 * /{id} is a url that is an id
-		 */
 	@Autowired
-	CourseServices cs;
+	AssignmentServices as;
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-		public ResponseEntity<List<Course>> getAllCourses()
+		public ResponseEntity<List<Assignment>> getAllAssignments()
 		{
-			return new ResponseEntity<List<Course>>(cs.getAllCourses(),HttpStatus.OK);
+			return new ResponseEntity<List<Assignment>>(as.getAllAssignments(),HttpStatus.OK);
 		}
 	
 	@RequestMapping(value = "/{id}",method = RequestMethod.GET)
-	public ResponseEntity<Course> getCourseById(@PathVariable int id)
+	public ResponseEntity<Assignment> getAssignmentById(@PathVariable int id)
 	{
-		return new ResponseEntity<Course>(cs.getCourseById(id),HttpStatus.OK);
+		return new ResponseEntity<Assignment>(as.getAssignmentById(id),HttpStatus.OK);
 	}
 	//Delete a user
 		@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-		public void deleteCourseById(@PathVariable int id)
+		public void deleteAssignmentById(@PathVariable int id)
 		{
-			cs.deleteCourseById(id);
+			as.deleteAssignmentById(id);
 		}
 		//Insert
 		@RequestMapping(value = "/add",method = RequestMethod.GET)
 		@ResponseBody
-		public void addCourse(@RequestBody Course c)
+		public void addAssignment(@RequestBody Assignment a)
 		{
-			cs.addCourse(c);
+			as.addAssignment(a);
 		}
 		//update
 		@RequestMapping(value = "/update", method = RequestMethod.GET)
 		@ResponseBody
-		public void updateCourse(@RequestBody Course c)
+		public void updateAssignment(@RequestBody Assignment a)
 		{
-			cs.updateCourse(c);
+			as.updateAssignment(a);
 		}
+		
 }
