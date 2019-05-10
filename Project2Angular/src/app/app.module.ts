@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-
 //components:
 import { AppComponent } from './app.component';
 import { CreateAssignmentsComponent } from './components/create-assignments/create-assignments.component';
@@ -20,6 +19,7 @@ import { ViewscheduleComponent } from './components/viewschedule/viewschedule.co
 import { SetavailabilityComponent } from './components/setavailability/setavailability.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import { HomeComponent } from './components/home/home.component';
     ViewscheduleComponent, 
     SetavailabilityComponent, 
     LoginComponent, 
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
