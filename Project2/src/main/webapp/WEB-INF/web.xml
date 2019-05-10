@@ -3,8 +3,9 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
-	<display-name>Project2</display-name>
-	
+
+	<display-name>MEI</display-name>
+
 	<context-param>
 		<param-name>ContextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
@@ -19,7 +20,8 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
+
+
 	<servlet-mapping>
 		<servlet-name>FCServlet</servlet-name>
 		<url-pattern>/</url-pattern>
