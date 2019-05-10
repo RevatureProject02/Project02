@@ -40,11 +40,6 @@ const routes: Routes = [
   component: HomeComponent
 },
 {
-  path: '**',
-  redirectTo: 'home',
-  pathMatch: 'full'
-},
-{
   path: 'student-grades',
   component: StudentGradesComponent
 },
@@ -55,7 +50,12 @@ const routes: Routes = [
 {
   path: 'grade-assignments',
   component: GradeAssignmentsComponent
-}];
+},{
+  path: '**',
+  redirectTo: 'home',
+  pathMatch: 'full'
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
