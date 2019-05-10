@@ -26,6 +26,7 @@ import factory.EventFactory;
 import model.Advisor;
 import model.Meeting;
 import model.Professor;
+import repositories.MeetingRepository;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -36,6 +37,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class MeetingServices {
 	CalendarQuickstart cq = new CalendarQuickstart();
 
@@ -44,6 +49,9 @@ public class MeetingServices {
 	// the other way around, where the meeting is only inserted into our db if the
 	// calendar event is added to calendar
 	// this method returns 0 if unsuccessful
+	@Autowired
+	MeetingRepository mr;
+	
 	public int insertMeeting(Meeting m) {
 		try {
 			// using an eventFactory, we can create events in the calendar from courses or
