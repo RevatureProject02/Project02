@@ -2,7 +2,6 @@ package services;
 
 import java.util.List;
 
-import dao.ProfessorDaoImpl;
 import model.Professor;
 import repositories.ProfessorRepository;
 

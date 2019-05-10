@@ -11,7 +11,9 @@
 
 	<!-- Scan for Spring beans -->
 	<context:component-scan
-		base-package="repositories, factory, jUnit_Testing, model, services"></context:component-scan>
+
+		base-package="model, calenderapi, controllers, factory, repositories, services"></context:component-scan>
+
 
 	<!-- Use Annotations for MVC -->
 	<mvc:annotation-driven />
