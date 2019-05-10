@@ -19,6 +19,13 @@ import { ViewscheduleComponent } from './components/viewschedule/viewschedule.co
 import { SetavailabilityComponent } from './components/setavailability/setavailability.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { MajorChangeComponent } from './components/major-change/major-change.component';
+import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { RouterModule } from '@angular/router';
+import { StudentComponent } from './components/student/student.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -38,13 +45,19 @@ import { HomeComponent } from './components/home/home.component';
     ViewscheduleComponent, 
     SetavailabilityComponent, 
     LoginComponent, 
-    HomeComponent,
+    HomeComponent, 
+    MajorChangeComponent, 
+    CourseRegistrationComponent, 
+    LogoutComponent, 
+    NotFoundComponent,
+    StudentComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
