@@ -1,12 +1,12 @@
   <form>
-    <fieldset>
+   
   <div>
     <label for="summary">Enter a Title for the Course:</label>
-    <input type="text" id="summary" [(ngModel)]=model.summary>
+    <input type="text" id="summary" name="summary" [(ngModel)]=model.summary>
   </div>
   <div>
     <label for="room">Room:</label>
-    <input type="text" id="room" [(ngModel)]=model.room>
+    <input type="text" id="room" name="room" [(ngModel)]=model.room>
   </div>
   <div>
   <label for="days">Days of the Week</label>
@@ -38,7 +38,5 @@
     <option value="19:00:00">7:00pm</option>
     <option value="20:00:00">8:00pm</option>
     <option value="21:00:00">9:00pm</option>
-  </div>
+ 
   <button (click)=insertCourse()>Add Course to DB</button>
-</fieldset>
-</form>

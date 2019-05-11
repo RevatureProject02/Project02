@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UrlService {
-  public base: string = "http://localhost:8085..";
-  public update: string = this.base + "update/";
+  public base: string = "http://localhost:8085/Project2/";
+  public addCourse: string = this.base + "course/add";
   public delete: string = this.base + "delete/";
 
   constructor() { }
