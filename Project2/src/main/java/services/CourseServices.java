@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Course;
+import model.Student;
 import repositories.CourseRepository;
 
 @Service
@@ -38,6 +39,10 @@ public class CourseServices
 	public void updateCourse(Course c)
 	{
 		cr.updateCourse(c);
+	}
+	public List<Course> getAllCoursesOfStudent(Student s)
+	{
+		return s.getCourses();
 	}
 	
 }

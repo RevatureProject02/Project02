@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import model.Course;
+import model.Student;
 
 @Transactional
 @Repository

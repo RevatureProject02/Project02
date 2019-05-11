@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name="Student")
-public class Student	
+public class Student implements Serializable
 {
 	@Id
 	@Column(name="s_id")

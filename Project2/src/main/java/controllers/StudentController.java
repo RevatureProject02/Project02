@@ -2,11 +2,17 @@ package controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,6 +63,26 @@ public class StudentController
 	{
 		ss.deleteStudentById(id);
 	}
+	//JSON TEST INSERT
+	@RequestMapping(value = "/addJSON",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public String handleJSONAss(@RequestBody @Valid Student s, Errors errors)
+	{
+		if(errors.hasErrors())
+		{
+			for(ObjectError e: errors.getAllErrors())
+				System.err.println(e);
+			return "Student is invalid";
+		}
+		try {
+			ss.addStudent(s);
+			return "Student added!";
+		}
+		catch (Exception e)
+		{
+			return "Student creation Failed!";
+		}
+	}
 	//Insert
 	@RequestMapping(value = "/add",method = RequestMethod.GET)
 	@ResponseBody
@@ -72,4 +98,9 @@ public class StudentController
 		ss.updateStudent(s);
 	}
 	
+	@GetMapping("/formAdd")
+	public String redirectToForm()
+	{
+		return "redirect:/static/home.html";
+	}
 }

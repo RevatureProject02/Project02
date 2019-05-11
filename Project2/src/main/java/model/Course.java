@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,7 +22,7 @@ import com.google.api.client.util.DateTime;
 
 @Entity
 @Table(name="Course")
-public class Course 
+public class Course implements Serializable
 {
 	@Id
 	@Column(name="c_id")
@@ -51,6 +52,26 @@ public class Course
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public List<Assignment> getAssignments() {
+		return assignments;
+	}
+
+	public void setAssignments(List<Assignment> assignments) {
+		this.assignments = assignments;
+	}
+
+	public void setTime(DateTime time) {
+		this.time = time;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public void setDays(String days) {
+		this.days = days;
 	}
 
 	public Course(String name, DateTime time, String location, String days) {
