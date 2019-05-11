@@ -2,10 +2,12 @@ package services;
 
 import java.util.List;
 
+import org.junit.experimental.theories.internal.Assignments;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Assignment;
+import model.Course;
 import repositories.AssignmentRepository;
 
 @Service
@@ -39,4 +41,9 @@ public class AssignmentServices
 	{
 		ar.updateAssignment(a);
 	}
+	public List<Assignment> getAssignmentsOfCourse(Course c)
+	{
+		return c.getAssignments();
+	}
+	
 }

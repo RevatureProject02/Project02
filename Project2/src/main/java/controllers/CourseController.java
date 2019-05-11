@@ -2,10 +2,15 @@ package controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,6 +60,8 @@ public class CourseController
 		{
 			cs.deleteCourseById(id);
 		}
+		
+		
 		//Insert
 		@RequestMapping(value = "/add",method = RequestMethod.GET)
 		@ResponseBody
@@ -69,4 +76,5 @@ public class CourseController
 		{
 			cs.updateCourse(c);
 		}
+		//Check Coruses
 }
