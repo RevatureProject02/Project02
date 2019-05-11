@@ -19,54 +19,38 @@ import services.CourseServices;
 @Controller
 @CrossOrigin
 @RequestMapping("/course")
-public class CourseController 
-{
+public class CourseController {
 
-	//@Autowired
-	//Service s;
-	//Replace this with the service class
-
-	// this works the same way
-	// @GetMapping("/all")
-		//@RequestMapping(value = "/url", method = Requestmethod.GET / POST)
-		//public ResponseEntity<ReturnObject> getstuff(@PathVariable key)
-		//return new ResponseEntity<ReturnObject>(repository.method(), HttpStatus.value)
-		/*
-		 * url can also hold values using {} as an example
-		 * /{id} is a url that is an id
-		 */
 	@Autowired
 	CourseServices cs;
-	
+
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-		public ResponseEntity<List<Course>> getAllCourses()
-		{
-			return new ResponseEntity<List<Course>>(cs.getAllCourses(),HttpStatus.OK);
-		}
-	
-	@RequestMapping(value = "/{id}",method = RequestMethod.GET)
-	public ResponseEntity<Course> getCourseById(@PathVariable int id)
-	{
-		return new ResponseEntity<Course>(cs.getCourseById(id),HttpStatus.OK);
+	public ResponseEntity<List<Course>> getAllCourses() {
+		return new ResponseEntity<List<Course>>(cs.getAllCourses(), HttpStatus.OK);
 	}
-	//Delete a user
-		@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-		public void deleteCourseById(@PathVariable int id)
-		{
-			cs.deleteCourseById(id);
-		}
-		//Insert
-		@RequestMapping(value = "/add",method = RequestMethod.GET)
-		@ResponseBody
-		public void addCourse(@RequestBody Course c)
-		{
-			cs.addCourse(c);
-		}
-		//update
-		@RequestMapping(value = "/update", method = RequestMethod.GET)
-		@ResponseBody
-		public void updateCourse(@RequestBody Course c)
-		{
-			cs.updateCourse(c);
-		}
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Course> getCourseById(@PathVariable int id) {
+		return new ResponseEntity<Course>(cs.getCourseById(id), HttpStatus.OK);
+	}
+
+	// Delete a user
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public void deleteCourseById(@PathVariable int id) {
+		cs.deleteCourseById(id);
+	}
+
+	// Insert
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@ResponseBody
+	public void addCourse(@RequestBody Course c) {
+		cs.addCourse(c);
+	}
+
+	// update
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	@ResponseBody
+	public void updateCourse(@RequestBody Course c) {
+		cs.updateCourse(c);
+	}
 }
