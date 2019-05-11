@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +13,9 @@ import javax.persistence.Table;
 public class Assignment 
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ass_id")
+	@SequenceGenerator(sequenceName="assignment_seq",name="ass_seq")
+	@GeneratedValue(generator="ass_seq",strategy=GenerationType.SEQUENCE)
 	private int id;
 	
 	@Column

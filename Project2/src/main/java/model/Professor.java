@@ -15,6 +15,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name="Professor")
 public class Professor 
@@ -44,7 +47,8 @@ public class Professor
 	@Column(name="p_office")
 	private int office;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="professor_course_jt",
 	joinColumns = @JoinColumn(name="p_id"),
 	inverseJoinColumns=@JoinColumn(name="c_id"))

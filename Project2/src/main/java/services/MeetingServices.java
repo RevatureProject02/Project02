@@ -14,7 +14,7 @@ import repositories.MeetingRepository;
 
 @Service
 public class MeetingServices {
-	CalendarQuickstart cq = new CalendarQuickstart();
+	//CalendarQuickstart cq = new CalendarQuickstart();
 
 	// in this service, i will create a calendar event if the meeting is inserted
 	// into our db.. might want to do it

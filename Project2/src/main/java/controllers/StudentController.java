@@ -18,7 +18,7 @@ import services.StudentServices;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/student")
+@RequestMapping("student")
 public class StudentController 
 {
 	

@@ -18,7 +18,7 @@ import services.CourseServices;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/course")
+@RequestMapping("course")
 public class CourseController {
 
 	@Autowired
@@ -41,7 +41,7 @@ public class CourseController {
 	}
 
 	// Insert
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@ResponseBody
 	public void addCourse(@RequestBody Course c) {
 		cs.addCourse(c);

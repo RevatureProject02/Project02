@@ -19,7 +19,7 @@ import model.Professor;
 import services.ProfessorServices;
 
 @Controller
-@RequestMapping("/professor")
+@RequestMapping("professor")
 @CrossOrigin
 public class ProfessorController 
 {

@@ -11,33 +11,33 @@
   <div>
   <label for="days">Days of the Week</label>
 	<select id="days">
-    <option>Mo/We/Fr</option>
-    <option>Mo/We</option>
-    <option>Mo</option>
-    <option>Tu/Th</option>
-    <option>Tu/Th/Fr</option>
-    <option>Mo/We/Th</option>
+    <option value="Mo, We, Fr">Mo/We/Fr</option>
+    <option value="Mo, We">Mo/We</option>
+    <option value="Mo">Mo</option>
+    <option value="Tu, Th">Tu/Th</option>
+    <option value="Tu, Th, Fr">Tu/Th/Fr</option>
+    <option value="Mo, We, Th">Mo/We/Th</option>
 
 	</select>
   </div>
   <div>
 	<label for="time">Time:</label>
 	<select id="time">
-    <option>7:00am</option>
-    <option>8:00am</option>
-    <option>9:00am</option>
-    <option>10:00am</option>
-    <option>11:00am</option>
-    <option>12:00pm</option>
-    <option>1:00pm</option>
-    <option>2:00pm</option>
-    <option>3:00pm</option>
-    <option>4:00pm</option>
-    <option>5:00pm</option>
-    <option>6:00pm</option>
-    <option>7:00pm</option>
-    <option>8:00pm</option>
-	</select>
+    <option value="07:00:00">7:00am</option>
+    <option value="08:00:00">8:00am</option>
+    <option value="09:00:00">9:00am</option>
+    <option value="10:00:00">10:00am</option>
+    <option value="11:00:00">11:00am</option>
+    <option value="12:00:00">12:00pm</option>
+    <option value="13:00:00">1:00pm</option>
+    <option value="14:00:00">2:00pm</option>
+    <option value="15:00:00">3:00pm</option>
+    <option value="16:00:00">4:00pm</option>
+    <option value="17:00:00">5:00pm</option>
+    <option value="18:00:00">6:00pm</option>
+    <option value="19:00:00">7:00pm</option>
+    <option value="20:00:00">8:00pm</option>
+    <option value="21:00:00">9:00pm</option>
   </div>
   <button (click)=insertCourse()>Add Course to DB</button>
 </fieldset>

@@ -15,6 +15,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name="Student")
 public class Student	
@@ -41,7 +44,8 @@ public class Student
 	@Column(name="s_email")
 	private String email;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="student_course_jt",
 	joinColumns = @JoinColumn(name = "s_id"),
 	inverseJoinColumns=@JoinColumn(name="c_id"))

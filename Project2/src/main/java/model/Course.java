@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import com.google.api.client.util.DateTime;
 
 @Entity
@@ -38,7 +41,8 @@ public class Course
 	@Column(name="c_days")
 	private String days;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany()
 	@JoinTable(name="Course_Assignment_jt",
 	joinColumns = @JoinColumn(name = "c_id"),
 	inverseJoinColumns=@JoinColumn(name="a_id"))
