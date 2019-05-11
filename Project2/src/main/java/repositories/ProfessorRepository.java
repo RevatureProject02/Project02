@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import model.Professor;
-import util.HibernateUtil;
 
 @Transactional
 @EnableTransactionManagement
