@@ -16,7 +16,6 @@ import model.Advisor;
 import model.Course;
 import model.Meeting;
 import model.Professor;
-import model.Student;
 
 public class EventFactory {
 

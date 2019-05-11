@@ -6,56 +6,57 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import model.Course;
+import model.Professor;
 
 @Transactional
-@Repository
 @EnableTransactionManagement
-public class CourseRepository 
-{
+@Repository
+public class ProfessorRepository {
+
 	@Autowired
 	SessionFactory sf;
-	//Get All courses
-	public List<Course> getCourses()
+	
+	
+	public int insertProfessor(Professor p) 
 	{
-		List<Course> courses = new ArrayList<Course>();
 		Session s = sf.getCurrentSession();
-		Criteria cr = s.createCriteria(Course.class);
-		courses=cr.list();
-		return courses;
+		return (int)s.save(p);
+	}
+
+	
+	public List<Professor> selectAllProfessors() {
+		
+		Session s = sf.getCurrentSession();
+		List<Professor> professors = new ArrayList<Professor>();
+		Criteria cr = s.createCriteria(Professor.class);
+		professors = cr.list();
+		return professors;
+	}
+
+	
+	public Professor selectProfessorById(int id) {
+		Session s = sf.getCurrentSession();
+		return (Professor) s.get(Professor.class, id);
+	}
+
+	
+	public void updateProfessor(Professor change) 
+	{
+		Session s = sf.getCurrentSession();
+		s.update(change);
 		
 	}
-	//Get Single course
-	public Course getById(int id)
-	{
+
+	
+	public void deleteProfessorById(int id) {
 		Session s = sf.getCurrentSession();
-		return (Course)s.get(Course.class, id);
-	}
-	//Saving
-	public void persistCourse(Course c)
-	{
-		Session s = sf.getCurrentSession();
-		s.save(c);
-	}
-	//Deleting
-	public String deleteCourseById(int id)
-	{
-		Session s = sf.getCurrentSession();
-		
-		Course c = (Course)s.get(Course.class,id);
-		s.delete(s.get(Course.class, id));
-		return c.getName();
-	}
-	//Update Course
-	public void updateCourse(Course c)
-	{
-		Session s = sf.getCurrentSession();
-		s.save(c);
+		s.delete(s.get(Professor.class, id));
 	}
 }
