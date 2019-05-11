@@ -31,9 +31,13 @@ public class AdvisorServices
 	}
 	
 	public List<Advisor> selectAllAdvisors(){
-		List<Advisor> advisors = new ArrayList<Advisor>();
+//		List<Advisor> advisors = new ArrayList<Advisor>();
 		return adrepo.selectAllAdvisors();
 	}
+	
+	
+	
+	
 	
 	
 }
