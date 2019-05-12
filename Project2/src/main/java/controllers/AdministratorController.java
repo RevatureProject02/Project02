@@ -1,24 +1,35 @@
 package controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import model.Administrator;
+import services.AdministratorServices;
 
 @Controller
 @RequestMapping("/administrator")
+@CrossOrigin
 public class AdministratorController
 {
 
-	//@Autowired
-	//Service s;
-	//Replace this with the service class
+	@Autowired
+	AdministratorServices as;
+	
 
-	// this works the same way
-	// @GetMapping("/all")
-		//@RequestMapping(value = "/url", method = Requestmethod.GET / POST)
-		//public ResponseEntity<ReturnObject> getstuff(@PathVariable key)
-		//return new ResponseEntity<ReturnObject>(repository.method(), HttpStatus.value)
-		/*
-		 * url can also hold values using {} as an example
-		 * /{id} is a url that is an id
-		 */
+	
+	 @GetMapping("/all")
+	 @ResponseBody		
+	public List<Administrator> getAllAdministrators(){
+		 return as.getAllAdministrators();
+	 }
+	
+		
 }
