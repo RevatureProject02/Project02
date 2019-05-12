@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import model.Advisor;
-import repositories.AdvisorRepo;
+import repositories.advisorRepo;
 
 @Service
 public class AdvisorServices 
 {
 		
 	@Autowired
-	AdvisorRepo adrepo;
+	advisorRepo adrepo;
 	
 	public Advisor selectAdvisorById(int id) {
 		List<Advisor> advisors = adrepo.selectAllAdvisors();

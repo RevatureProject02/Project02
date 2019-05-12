@@ -16,7 +16,7 @@ import model.Advisor;
 @Transactional
 @EnableTransactionManagement
 @Repository
-public class AdvisorRepo {
+public class advisorRepo {
 	
 	@Autowired
 	SessionFactory sf;
