@@ -32,8 +32,11 @@ public class Meeting {
 	@Column(name="m_summary")
 	private String summary;
 	
+	@Column(name="m_date")
+	private String date;
+	
 	@Column(name="m_time")
-	private DateTime time;
+	private String time;
 	
 	@Column (name="m_location")
 	private String location;
@@ -59,19 +62,21 @@ public class Meeting {
 	inverseJoinColumns=@JoinColumn(name="s_id")) 
 	private List<Student> students;
 
-	public Meeting(int id, String summary, DateTime time, String location, List<Advisor> advisors,
-			List<Professor> professors, List<Student> students) {
+
+	public Meeting(int id, String summary, String date, String time, String location) {
 		super();
 		this.id = id;
 		this.summary = summary;
+		this.date = date;
 		this.time = time;
 		this.location = location;
 	}
+	
 
-	public Meeting(String summary, DateTime time, String location, List<Advisor> advisors, List<Professor> professors,
-			List<Student> students) {
+	public Meeting(String summary, String date, String time, String location) {
 		super();
 		this.summary = summary;
+		this.date = date;
 		this.time = time;
 		this.location = location;
 	}
@@ -83,8 +88,8 @@ public class Meeting {
 
 	@Override
 	public String toString() {
-		return "Meeting [id=" + id + ", summary=" + summary + ", time=" + time + ", location=" + location
-				+ ", advisors=" + advisors + ", professors=" + professors + ", students=" + students + "]";
+		return "Meeting [id=" + id + ", summary=" + summary + ", date=" + date + ", time=" + time + ", location="
+				+ location + ", advisors=" + advisors + ", professors=" + professors + ", students=" + students + "]";
 	}
 
 	public int getId() {
@@ -103,11 +108,11 @@ public class Meeting {
 		this.summary = summary;
 	}
 
-	public DateTime getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(DateTime time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
