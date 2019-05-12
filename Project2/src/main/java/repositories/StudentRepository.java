@@ -14,8 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import model.Student;
 
 @Transactional
-@Repository
 @EnableTransactionManagement
+@Repository
 public class StudentRepository 
 {
 	@Autowired

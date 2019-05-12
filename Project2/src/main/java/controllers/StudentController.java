@@ -66,7 +66,7 @@ public class StudentController
 	//JSON TEST INSERT
 	@RequestMapping(value = "/addJSON",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String handleJSONAss(@RequestBody @Valid Student s, Errors errors)
+	public String handleJSONAdd(@RequestBody @Valid Student s, Errors errors)
 	{
 		if(errors.hasErrors())
 		{
@@ -98,9 +98,5 @@ public class StudentController
 		ss.updateStudent(s);
 	}
 	
-	@GetMapping("/formAdd")
-	public String redirectToForm()
-	{
-		return "redirect:/static/home.html";
-	}
+	
 }
