@@ -44,7 +44,7 @@ public class EventFactory {
         	event.setStart(start);
         //
 
-        	
+        	//2019-05-04T14:00:00-04:00
         //using UTC, and a -4:00, we get the EST time translated from UTC.. 15:00:00-4:00 = 3pm somehow
         	DateTime endDateTime = new DateTime(m.getTime().toString()+ "-4:30");//might be -3:30, its one of these
         	EventDateTime end = new EventDateTime()
@@ -107,7 +107,7 @@ public class EventFactory {
         	event.setStart(start);
         //
 
-        	
+        	//2019-05-04T14:00:00-04:00
         //using UTC, and a -4:00, we get the EST time translated from UTC.. 15:00:00-4:00 = 3pm somehow
         	DateTime endDateTime = new DateTime(c.getTime().toString()+ "-5:00");//might be -3:00, its one of these
         	EventDateTime end = new EventDateTime()

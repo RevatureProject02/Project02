@@ -1,19 +1,42 @@
+  <form>
+   
   <div>
     <label for="summary">Enter a Title for the Course:</label>
-    <input type="text" id="summary">
+    <input type="text" id="summary" name="summary" [(ngModel)]=model.summary>
   </div>
   <div>
-    <label for="pwd">Room:</label>
-    <input type="password" id="pwd">
+    <label for="room">Room:</label>
+    <input type="text" id="room" name="room" [(ngModel)]=model.room>
   </div>
   <div>
   <label for="days">Days of the Week</label>
 	<select id="days">
+    <option value="Mo, We, Fr">Mo/We/Fr</option>
+    <option value="Mo, We">Mo/We</option>
+    <option value="Mo">Mo</option>
+    <option value="Tu, Th">Tu/Th</option>
+    <option value="Tu, Th, Fr">Tu/Th/Fr</option>
+    <option value="Mo, We, Th">Mo/We/Th</option>
+
 	</select>
   </div>
   <div>
 	<label for="time">Time:</label>
 	<select id="time">
-	</select>
-  </div>
-  <button type="submit">Submit</button>
+    <option value="07:00:00">7:00am</option>
+    <option value="08:00:00">8:00am</option>
+    <option value="09:00:00">9:00am</option>
+    <option value="10:00:00">10:00am</option>
+    <option value="11:00:00">11:00am</option>
+    <option value="12:00:00">12:00pm</option>
+    <option value="13:00:00">1:00pm</option>
+    <option value="14:00:00">2:00pm</option>
+    <option value="15:00:00">3:00pm</option>
+    <option value="16:00:00">4:00pm</option>
+    <option value="17:00:00">5:00pm</option>
+    <option value="18:00:00">6:00pm</option>
+    <option value="19:00:00">7:00pm</option>
+    <option value="20:00:00">8:00pm</option>
+    <option value="21:00:00">9:00pm</option>
+ 
+  <button (click)=insertCourse()>Add Course to DB</button>

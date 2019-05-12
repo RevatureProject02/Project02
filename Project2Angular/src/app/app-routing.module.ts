@@ -10,6 +10,8 @@ import { SchedulemeetingComponent } from './components/schedulemeeting/schedulem
 import { SetavailabilityComponent } from './components/setavailability/setavailability.component';
 import { ViewscheduleComponent } from './components/viewschedule/viewschedule.component';
 import { StudentGradesComponent } from './components/student-grades/student-grades.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
+import { StudentComponent } from './components/student/student.component'; 
 const routes: Routes = [
 {
   path:'createcourse',
@@ -42,6 +44,14 @@ const routes: Routes = [
 {
   path: 'student-grades',
   component: StudentGradesComponent
+},      
+{ 
+  path: 'profile/:id', 
+  component: StudentProfileComponent
+},
+{ 
+  path: 'student', 
+  component: StudentComponent
 },
 {
   path: 'create-assignments',
@@ -51,10 +61,10 @@ const routes: Routes = [
   path: 'grade-assignments',
   component: GradeAssignmentsComponent
 },{
-  path: '**',
-  redirectTo: 'home',
-  pathMatch: 'full'
-}
+   path: '**',
+   redirectTo: 'home',
+   pathMatch: 'full'
+ }
 ];
 
 @NgModule({

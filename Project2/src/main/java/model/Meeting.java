@@ -14,6 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import com.google.api.client.util.DateTime;
 
 @Entity
@@ -35,19 +38,22 @@ public class Meeting {
 	@Column (name="m_location")
 	private String location;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="meeting_advisor_jt",
 	joinColumns=@JoinColumn(name="m_id"),
 	inverseJoinColumns=@JoinColumn(name="adv_id")) 
 	private List<Advisor> advisors;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="meeting_professor_jt",
 	joinColumns=@JoinColumn(name="m_id"),
 	inverseJoinColumns=@JoinColumn(name="p_id")) 
 	private List<Professor> professors;
 
-	@ManyToMany(fetch=FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="meeting_student_jt",
 	joinColumns=@JoinColumn(name="m_id"),
 	inverseJoinColumns=@JoinColumn(name="s_id")) 

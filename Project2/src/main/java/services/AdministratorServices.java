@@ -1,3 +1,4 @@
+
 package services;
 
 import java.util.ArrayList;
@@ -38,3 +39,4 @@ public class AdministratorServices
 		ar.deleteAdministratorById(id);
 	}
 }
+

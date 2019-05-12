@@ -1,10 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,10 +13,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name="Student")
-public class Student	
+public class Student implements Serializable
 {
 	@Id
 	@Column(name="s_id")
@@ -36,10 +40,12 @@ public class Student
 	@Column(name="s_password")
 	private String password;
 	
+	@Pattern(regexp="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}")
 	@Column(name="s_email")
 	private String email;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany()
 	@JoinTable(name="student_course_jt",
 	joinColumns = @JoinColumn(name = "s_id"),
 	inverseJoinColumns=@JoinColumn(name="c_id"))
