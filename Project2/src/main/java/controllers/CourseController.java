@@ -12,7 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,38 +26,38 @@ import model.Course;
 import services.CourseServices;
 
 @Controller
-@CrossOrigin
 @RequestMapping("course")
+@CrossOrigin
 public class CourseController {
 
 	@Autowired
 	CourseServices cs;
 
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	@GetMapping(value = "/all")
 	public ResponseEntity<List<Course>> getAllCourses() {
 		return new ResponseEntity<List<Course>>(cs.getAllCourses(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Course> getCourseById(@PathVariable int id) {
 		return new ResponseEntity<Course>(cs.getCourseById(id), HttpStatus.OK);
 	}
 
 	// Delete a user
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	@DeleteMapping(value = "/delete/{id}")
 	public void deleteCourseById(@PathVariable int id) {
 		cs.deleteCourseById(id);
 	}
 
 	// Insert
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@PostMapping(value = "/add")
 	@ResponseBody
 	public void addCourse(@RequestBody Course c) {
 		cs.addCourse(c);
 	}
 
 	// update
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	@PutMapping(value = "/update")
 	@ResponseBody
 	public void updateCourse(@RequestBody @Valid Course c) {
 		cs.updateCourse(c);
