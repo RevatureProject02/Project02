@@ -55,8 +55,10 @@ public class CourseController {
 	// update
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	@ResponseBody
-	public void updateCourse(@RequestBody Course c) {
+	public void updateCourse(@RequestBody @Valid Course c) {
 		cs.updateCourse(c);
 	}
+	
+	
 
 }
