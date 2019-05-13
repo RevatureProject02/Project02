@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { UrlService } from './url.service';
 import { Observable } from 'rxjs';
-import ( Advisor ) from './advisor';
+import { Advisor } from './advisor';
 import { headersToString } from 'selenium-webdriver/http';
 
 
@@ -18,6 +18,6 @@ export class AdvisorService {
    }
 
    addAdvisor(a: Advisor): Observable<any>{
-     return this.http.post(this.url.base, a, {headers: this.header});
+     return this.http.post(this.url.base, a, {headers: this.headers});
    }
 }
