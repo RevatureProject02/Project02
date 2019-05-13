@@ -18,6 +18,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Administrator implements Serializable
 {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="ad_id")
 	@SequenceGenerator(sequenceName="administrator_seq",name="ad_seq")
