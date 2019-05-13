@@ -6,20 +6,21 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import model.Course;
 import model.Student;
+import services.CourseServices;
 import services.StudentServices;
 
 @Controller
@@ -64,7 +65,8 @@ public class StudentController
 		ss.deleteStudentById(id);
 	}
 	//JSON TEST INSERT
-	@RequestMapping(value = "/addJSON",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
+	//@RequestMapping(value = "/addJSON",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/addJSON")
 	@ResponseBody
 	public String handleJSONAdd(@RequestBody @Valid Student s, Errors errors)
 	{
@@ -97,6 +99,11 @@ public class StudentController
 	{
 		ss.updateStudent(s);
 	}
-	
+	//Get all courses of this student
+	@RequestMapping(value = "/courseList", method = RequestMethod.GET)
+	public List<Course> getCoursesOfStudent(@RequestBody Student s)
+	{
+		return new CourseServices().getAllCoursesOfStudent(s);
+	}
 	
 }

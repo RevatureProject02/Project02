@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 import { StudentComponent } from './components/student/student.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AddAdminComponent } from './components/add-admin/add-admin.component';
 
 
 
@@ -50,7 +51,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LogoutComponent, 
     NotFoundComponent,
     StudentComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+    AddAdminComponent,
   ],
   imports: [
     BrowserModule,

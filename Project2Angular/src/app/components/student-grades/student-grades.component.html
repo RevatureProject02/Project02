@@ -1,19 +1,21 @@
-
+<div class="jumbotron" style="margin-bottom:0">
+  <h1>Student Grades</h1>
+  <h6>Modern Education Integration</h6>
+</div>
 <app-student-navbar></app-student-navbar>
 <div>
-  <h1>Students Grades</h1>
+
   <p>
-    Select the class in which you want
-    to see your grading sheet!
+    Select the class in which you want to see your grading sheet!
   </p>
-  <select id="class select" onselect="populateTable()">
-  
+  <select ng-options="" ng-click="populateTable()">
+  <!---Cannot be populated because Logging in does not work-->
   </select>
 
   
   <h3>
     <Table id="GradeSheet">
-  
+  <!--Cannot be populated because Logging in does not work-->
     </Table>
   </h3>
   

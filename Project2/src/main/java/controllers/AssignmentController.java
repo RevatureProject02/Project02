@@ -35,20 +35,20 @@ public class AssignmentController
 	{
 		return new ResponseEntity<Assignment>(as.getAssignmentById(id),HttpStatus.OK);
 	}
-	//Delete a user
+	//Delete assignment
 		@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 		public void deleteAssignmentById(@PathVariable int id)
 		{
 			as.deleteAssignmentById(id);
 		}
-		//Insert
+		//Insert assignment
 		@RequestMapping(value = "/add",method = RequestMethod.GET)
 		@ResponseBody
 		public void addAssignment(@RequestBody Assignment a)
 		{
 			as.addAssignment(a);
 		}
-		//update
+		//update assignment
 		@RequestMapping(value = "/update", method = RequestMethod.GET)
 		@ResponseBody
 		public void updateAssignment(@RequestBody Assignment a)
