@@ -23,7 +23,7 @@ import model.Meeting;
 import services.MeetingServices;
 
 @Controller
-@RequestMapping("/meeting")
+@RequestMapping("meeting")
 @CrossOrigin
 public class MeetingController 
 {

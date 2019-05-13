@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,11 +15,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import com.google.api.client.util.DateTime;
 
 @Entity
 @Table(name="Course")
-public class Course 
+public class Course implements Serializable
 {
 	@Id
 	@Column(name="c_id")
@@ -38,7 +42,8 @@ public class Course
 	@Column(name="c_days")
 	private String days;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany()
 	@JoinTable(name="Course_Assignment_jt",
 	joinColumns = @JoinColumn(name = "c_id"),
 	inverseJoinColumns=@JoinColumn(name="a_id"))
@@ -47,6 +52,26 @@ public class Course
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public List<Assignment> getAssignments() {
+		return assignments;
+	}
+
+	public void setAssignments(List<Assignment> assignments) {
+		this.assignments = assignments;
+	}
+
+	public void setTime(DateTime time) {
+		this.time = time;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public void setDays(String days) {
+		this.days = days;
 	}
 
 	public Course(String name, DateTime time, String location, String days) {

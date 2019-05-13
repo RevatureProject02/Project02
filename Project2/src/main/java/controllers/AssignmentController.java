@@ -18,7 +18,7 @@ import services.AssignmentServices;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/Assignments")
+@RequestMapping("Assignments")
 public class AssignmentController 
 {
 	@Autowired

@@ -1,18 +1,23 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table
-public class Assignment 
+public class Assignment implements Serializable
 {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ass_id")
+	@SequenceGenerator(sequenceName="assignment_seq",name="ass_seq")
+	@GeneratedValue(generator="ass_seq",strategy=GenerationType.SEQUENCE)
 	private int id;
 	
 	@Column

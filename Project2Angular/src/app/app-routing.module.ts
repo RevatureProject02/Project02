@@ -61,10 +61,10 @@ const routes: Routes = [
   path: 'grade-assignments',
   component: GradeAssignmentsComponent
 },{
-  path: '**',
-  redirectTo: 'home',
-  pathMatch: 'full'
-}
+   path: '**',
+   redirectTo: 'home',
+   pathMatch: 'full'
+ }
 ];
 
 @NgModule({
