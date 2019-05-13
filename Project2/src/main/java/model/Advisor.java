@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="Advisor")
-public class Advisor 
+public class Advisor implements Serializable
 {
 	@Id
 	@Column(name="adv_id")

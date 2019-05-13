@@ -9,13 +9,21 @@ import { CourseService } from '../../course.service';
 })
 export class CreatecourseComponent implements OnInit {
 
-  model = new Course(0, "name", "time", "location", "days")
+  
+  course_list = [];
+
+  model = new Course(0, "name", "time", "location", "days");
   constructor(private cs: CourseService) { }
 
   ngOnInit() {
   }
   insertCourse(){
+    //this.model = new Course(0, "name", "time", "location", "days");
     this.cs.insertCourse(this.model).subscribe(x=>{"this does nothing"});
     this.model = new Course(0, "", "", "", "");
+  }
+
+  showCourses() {
+    this.cs.showCourses().subscribe(x => this.course_list = JSON.parse(x));
   }
 }

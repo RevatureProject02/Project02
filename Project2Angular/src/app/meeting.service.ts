@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Course } from './course';
+import { Meeting } from './meeting'
 import { UrlService } from './url.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+export class MeetingService {
 
   headers = new HttpHeaders();
 
@@ -15,11 +15,11 @@ export class CourseService {
   this.headers.append('Content-Type', 'application/json');
   }
   
-  insertCourse(c: Course): Observable<any> {
-    return this.http.post(this.url.addCourse, c, {headers: this.headers});
+  insertMeeting(m: Meeting): Observable<any> {
+    return this.http.post(this.url.addMeeting, m, {headers: this.headers});
   }
 
-  showCourses(): Observable<any>{
-    return this.http.get(this.url.showCourses, {responseType: "text", headers: this.headers });
+  showMeetings(): Observable<any>{
+    return this.http.get(this.url.showMeetings, {responseType: "text", headers: this.headers });
   }
 }

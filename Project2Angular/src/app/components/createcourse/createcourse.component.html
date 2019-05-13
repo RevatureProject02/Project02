@@ -1,42 +1,49 @@
   <form>
-   
+      <button (click)=insertCourse()>Add Course to DB</button>
   <div>
-    <label for="summary">Enter a Title for the Course:</label>
-    <input type="text" id="summary" name="summary" [(ngModel)]=model.summary>
+    <label for="name">Enter a Title for the Course:</label>
+    <input type="text" id="name" name="name" [(ngModel)]=model.name>
   </div>
   <div>
-    <label for="room">Room:</label>
-    <input type="text" id="room" name="room" [(ngModel)]=model.room>
+    <label for="location">Room:</label>
+    <input type="text" id="location" name="location" [(ngModel)]=model.location>
   </div>
   <div>
   <label for="days">Days of the Week</label>
-	<select id="days">
-    <option value="Mo, We, Fr">Mo/We/Fr</option>
-    <option value="Mo, We">Mo/We</option>
-    <option value="Mo">Mo</option>
-    <option value="Tu, Th">Tu/Th</option>
-    <option value="Tu, Th, Fr">Tu/Th/Fr</option>
-    <option value="Mo, We, Th">Mo/We/Th</option>
+	<select id="days" name="days" [(ngModel)]=model.days>
+    <option value="MO, WE, FR">Mo/We/Fr</option>
+    <option value="MO, WE">Mo/We</option>
+    <option value="MO">Mo</option>
+    <option value="TU, TH">Tu/Th</option>
+    <option value="TU, TH, FR">Tu/Th/Fr</option>
+    <option value="MO, WE, TH">Mo/We/Th</option>
 
 	</select>
   </div>
   <div>
-	<label for="time">Time:</label>
-	<select id="time">
-    <option value="07:00:00">7:00am</option>
-    <option value="08:00:00">8:00am</option>
-    <option value="09:00:00">9:00am</option>
-    <option value="10:00:00">10:00am</option>
-    <option value="11:00:00">11:00am</option>
-    <option value="12:00:00">12:00pm</option>
-    <option value="13:00:00">1:00pm</option>
-    <option value="14:00:00">2:00pm</option>
-    <option value="15:00:00">3:00pm</option>
-    <option value="16:00:00">4:00pm</option>
-    <option value="17:00:00">5:00pm</option>
-    <option value="18:00:00">6:00pm</option>
-    <option value="19:00:00">7:00pm</option>
-    <option value="20:00:00">8:00pm</option>
-    <option value="21:00:00">9:00pm</option>
- 
-  <button (click)=insertCourse()>Add Course to DB</button>
+	<label for="time" >Time:</label>
+	<select id="time" name="time" [(ngModel)]=model.time>
+    <option value="2019-05-12T07:00:00">7:00am</option>
+    <option value="2019-05-12T08:00:00">8:00am</option>
+    <option value="2019-05-12T09:00:00">9:00am</option>
+    <option value="2019-05-12T10:00:00">10:00am</option>
+    <option value="2019-05-12T11:00:00">11:00am</option>
+    <option value="2019-05-12T12:00:00">12:00pm</option>
+    <option value="2019-05-12T13:00:00">1:00pm</option>
+    <option value="2019-05-12T14:00:00">2:00pm</option>
+    <option value="2019-05-12T15:00:00">3:00pm</option>
+    <option value="2019-05-12T16:00:00">4:00pm</option>
+    <option value="2019-05-12T17:00:00">5:00pm</option>
+    <option value="2019-05-12T18:00:00">6:00pm</option>
+    <option value="2019-05-12T19:00:00">7:00pm</option>
+    <option value="2019-05-12T20:00:00">8:00pm</option>
+    <option value="2019-05-12T21:00:00">9:00pm</option>
+
+</select>
+<form>
+    <button (click)=showCourses()>Current Courses</button>
+    <div *ngFor="let course of course_list">
+        <p>{{course | json}}</p>
+        
+     
+
