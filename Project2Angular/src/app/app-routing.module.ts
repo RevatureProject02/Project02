@@ -12,10 +12,15 @@ import { ViewscheduleComponent } from './components/viewschedule/viewschedule.co
 import { StudentGradesComponent } from './components/student-grades/student-grades.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { StudentComponent } from './components/student/student.component'; 
+import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
 const routes: Routes = [
 {
   path:'createcourse',
   component: CreatecourseComponent
+},
+{
+  path:"course-registration",
+  component: CourseRegistrationComponent
 },
 {
   path:'schedulemeeting',

@@ -30,20 +30,23 @@
         <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
       </li>    
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="schedulemeeting">Schedule a Meeting</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/schedulemeeting">Schedule a Meeting</a>
       </li>
       <li>    
-        <a class="nav-link" routerLinkActive="active" routerLink="createcourse">Create a Course</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/createcourse">Create a Course</a>
       </li>   
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/student-grades">Student Grades</a>
       </li>   
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="login">Login/Register</a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
       </li>   
       <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="login">Login/Register</a>
-      </li>   
+                <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active current" routerLink="/course-registration">Register For Course</a>
+      </li>
     </ul>
   </div>  
 </nav>
@@ -59,7 +62,8 @@
       <p>Make Sure to Stay Up To Date</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Upcoming site changes</a>
+          <a class="nav-link active" routerLinkActive="active current" routerLink="/viewschedule">View Schedule</a>
+          
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Connect with your school</a>
