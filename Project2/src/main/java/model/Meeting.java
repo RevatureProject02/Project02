@@ -33,7 +33,7 @@ public class Meeting implements Serializable {
 	private String summary;
 	
 	@Column(name="m_date")
-	private String date;
+	private String myDate;
 	
 	@Column(name="m_time")
 	private String time;
@@ -62,23 +62,45 @@ public class Meeting implements Serializable {
 	inverseJoinColumns=@JoinColumn(name="s_id")) 
 	private List<Student> students;
 
+	
 
-	public Meeting(int id, String summary, String date, String time, String location) {
+
+
+
+
+
+
+	public Meeting(int id, String summary, String myDate, String time, String location, List<Advisor> advisors,
+			List<Professor> professors, List<Student> students) {
 		super();
 		this.id = id;
 		this.summary = summary;
-		this.date = date;
+		this.myDate = myDate;
+		this.time = time;
+		this.location = location;
+		this.advisors = advisors;
+		this.professors = professors;
+		this.students = students;
+	}
+
+
+	public Meeting(int id, String summary, String myDate, String time, String location) {
+		super();
+		this.id = id;
+		this.summary = summary;
+		this.myDate = myDate;
 		this.time = time;
 		this.location = location;
 	}
-	
 
-	public Meeting(String summary, String date, String time, String location) {
+
+	public Meeting(String summary, String myDate, String time, String location) {
 		super();
 		this.summary = summary;
-		this.date = date;
+		this.myDate = myDate;
 		this.time = time;
 		this.location = location;
+	
 	}
 
 	public Meeting() {
@@ -88,9 +110,23 @@ public class Meeting implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Meeting [id=" + id + ", summary=" + summary + ", date=" + date + ", time=" + time + ", location="
+		return "Meeting [id=" + id + ", summary=" + summary + ", myDate=" + myDate + ", time=" + time + ", location="
 				+ location + ", advisors=" + advisors + ", professors=" + professors + ", students=" + students + "]";
 	}
+
+	
+	public String getMyDate() {
+		return myDate;
+	}
+
+
+
+
+
+	public void setMyDate(String date) {
+		this.myDate = date;
+	}
+
 
 	public int getId() {
 		return id;
