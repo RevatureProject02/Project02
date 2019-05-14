@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Advisor;
 import services.AdvisorServices;
 
 @Controller
-@RequestMapping("MEI/Advisor")
+@RequestMapping("advisor")
+@CrossOrigin
 public class AdvisorController{
 	
 	@Autowired
@@ -29,17 +31,18 @@ public class AdvisorController{
 		return new ResponseEntity<>(as.selectAllAdvisors(), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/advisorById")
+	@GetMapping(value="/advisorById")
 	public Advisor selectAdvisorById(@PathVariable int id) {
 		return as.selectAdvisorById(id);
 	}
 	
-	@PostMapping(value="/add")
+	@PostMapping(value="/addAdvisor")
+	@ResponseBody
 	public void insertAdvisor(@RequestBody Advisor a) {
 		as.insertAdvisor(a);
 	}
 	
-	
+	 
 	
 	
 	
