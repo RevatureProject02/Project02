@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {AngularWebStorageModule} from 'angular-web-storage';
 //components:
 import { AppComponent } from './app.component';
 import { CreateAssignmentsComponent } from './components/create-assignments/create-assignments.component';
@@ -59,6 +60,7 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
+    AngularWebStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
