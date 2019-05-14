@@ -35,18 +35,19 @@ public class EventFactory {
         	    .setLocation(m.getLocation())
         	    .setDescription("Meeting event insertMeeting() method!");
 
-        	
+        
         //this block is for setting the start time of the meeting
-        	DateTime startDateTime = new DateTime(m.getTime().toString()+ "-4:00");//might have to fiddle with the -4:00 to get it to be the right EST time
+        	DateTime startDateTime = new DateTime(m.getMyDate() + m.getTime() + "-04:00");//might have to fiddle with the -4:00 to get it to be the right EST time
         	EventDateTime start = new EventDateTime()
         	    .setDateTime(startDateTime)
         	    .setTimeZone("UTC");
         	event.setStart(start);
         //
 
+
         	//2019-05-04T14:00:00-04:00
         //using UTC, and a -4:00, we get the EST time translated from UTC.. 15:00:00-4:00 = 3pm somehow
-        	DateTime endDateTime = new DateTime(m.getTime().toString()+ "-4:30");//might be -3:30, its one of these
+        	DateTime endDateTime = new DateTime(m.getMyDate() + m.getTime() + "-04:30");//might be -3:30, its one of these
         	EventDateTime end = new EventDateTime()
         	    .setDateTime(endDateTime)
         	    .setTimeZone("UTC");
@@ -58,18 +59,18 @@ public class EventFactory {
         //this block uses loops to set the list of attendees based off of lists to be filled up when a 
         //meeting is instantiated on the java side.
         //im not sure if this will work right, probably will be revisited
-        	EventAttendee[] attendees = new EventAttendee[] {};
-        	int i=0;
-        			for(Advisor advisor : m.getAdvisors()) {
-    	    attendees[i] = new EventAttendee().setEmail(advisor.getEmail());
-    	    i++;
-        			}
-        			for(Professor professor : m.getProfessors()) {
-    	    attendees[i] = new EventAttendee().setEmail(professor.getEmail());
-    	    i++;
-        			}
-        	
-        	event.setAttendees(Arrays.asList(attendees));
+//        	EventAttendee[] attendees = new EventAttendee[] {};
+//        	int i=0;
+//        			for(Advisor advisor : m.getAdvisors()) {
+//    	    attendees[i] = new EventAttendee().setEmail(advisor.getEmail());
+//    	    i++;
+//        			}
+//        			for(Professor professor : m.getProfessors()) {
+//    	    attendees[i] = new EventAttendee().setEmail(professor.getEmail());
+//    	    i++;
+//        			}
+//        	
+//        	event.setAttendees(Arrays.asList(attendees));
         //
             //calendarId is referring to a gmail to post to.. primary means the logged-in and authenticated gmail user
         	String calendarId = "primary";//primary could be set to our session variable once login is made

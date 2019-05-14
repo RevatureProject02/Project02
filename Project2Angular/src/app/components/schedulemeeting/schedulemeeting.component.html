@@ -5,8 +5,10 @@
   </div>
   <div>
 	<label for="professorOrAdvisor">Select the Person you would like to Meet with:
-    <select id="professorOrAdvisor">
-	</select>
+    <select id="professor" ng-options="professor for professor in professor_list">
+      <!--<div *ngFor="let professor of professor_list">-->
+      <!--<option value="">{{professor.name | json}}</option>-->
+	`</select>
   <div>
 	<label for="time">Select a Start Time:
     <select id="time" name="time" [(ngModel)]=model.time>
@@ -28,14 +30,16 @@
         <option value="T16:30:00">4:30pm</option>
 
   </select>
-  <div>
+ <div>
     <label for="myDate">Enter a Date:
     <input type="text" name="myDate" id="myDate" [(ngModel)]=model.myDate>
+  
   <div>
       <label for="location">Pick a Location:
       <select id="location" name="location" [(ngModel)]=model.location>
         <option value="Office">Office</option>
       </select>
+    
  
   <button (click)=insertMeeting()>Add to Schedule</button>
   <button (click)=showMeetings()>Show Meetings</button>
