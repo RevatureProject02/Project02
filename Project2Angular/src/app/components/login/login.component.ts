@@ -3,8 +3,12 @@ import { Administrator } from 'src/app/administrator';
 import { AdministratorService } from 'src/app/administrator.service';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 import { resolve } from 'path';
 import {SessionStorage, LocalStorage, SessionStorageService,LocalStorageService} from 'angular-web-storage';
+=======
+// import { resolve } from 'path';
+>>>>>>> d6c0d9386b96ddbd20c09ce26fcf6de445e11b8a
 
 @Component({
   selector: 'app-login',
@@ -34,7 +38,7 @@ export class LoginComponent implements OnInit {
 
 
   loginUser(event){
-    event.preventDefault();
+    // event.preventDefault();
     const target = event.target;
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
