@@ -3,7 +3,7 @@ import { Administrator } from 'src/app/administrator';
 import { AdministratorService } from 'src/app/administrator.service';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
-import { resolve } from 'path';
+// import { resolve } from 'path';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.model = new Administrator(0, "", 0, "", "", "")
   }
   loginUser(event){
-    event.preventDefault();
+    // event.preventDefault();
     const target = event.target;
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
