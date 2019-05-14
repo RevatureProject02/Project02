@@ -30,21 +30,26 @@ export class LoginComponent implements OnInit {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
     this.model = new Administrator(0, "", 0, "", "", "")
   }
+
+
   loginUser(event){
     // event.preventDefault();
-    const target = event.target;
-    const username = target.querySelector('#username').value;
-    const password = target.querySelector('#password').value;
-    const role = target.querySelector('input[name="role"]:checked').value;
+      
+    
+     const target = event.target;
+     const username = target.querySelector('#username').value;
+     const password = target.querySelector('#password').value;
+     const role = target.querySelector('input[name="role"]:checked').value;
     this.auth.getUserDetails(username, password, role).subscribe(data => {
       if(data.success) {
-        this.router.navigate(['admin'])
+        localStorage.setItem('User',username);
+        localStorage.setItem('Password',password);
+        localStorage.setItem('Role',role);
+        this.router.navigate(['/home'])
         this.auth.setLoggedIn(true);
       }else{
         window.alert(data.message);
       }
     })
-    console.log(username, password, role);
-
   }
 }

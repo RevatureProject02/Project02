@@ -11,8 +11,11 @@ export class UrlService {
   public addMeeting: string = this.base + "meeting/add/";
   public showMeetings: string = this.base + "meeting/all/";
 
+  public getProfessors: string = this.base + "professor/all";
+
   public addAdmin: string = this.base + "administrator/add/"
   public getAdmin: string = this.base + "administrator/all/"
+  
   public adminLogin: string = this.base + "administrator/login"
 
   //Student methods
@@ -20,11 +23,18 @@ export class UrlService {
   public showStudents: string = this.base + "student/all";
   public studentLogin: string = this.base + "student/login";
 
+  //Professor methods
+  public addProfessor: string = this.base + "Professor/add";
+  public showProfessors: string = this.base + "professor/all";
+
+  //Logins
+  public advisorLogin: string = this.base + "advisor/Login";
+  public profLogin: string =  this.base + "professor/login";
+
   //advisor
-  public advisorLogin: string = this.base + "advisor/login";
+
 
   //professor
-  public profLogin: string = this.base + "professor/login";
-  public getProfessors: string = this.base + "professor/all";
+
   constructor() { }
 }
