@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Administrator } from 'src/app/administrator';
+import { AdministratorService } from 'src/app/administrator.service';
 
 @Component({
   selector: 'app-add-admin',
@@ -7,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddAdminComponent implements OnInit {
 
-  //add model: type Administrator
+  model = new Administrator(0, "name", 0, "username", "password", "email")
 
-  constructor() { }
+  constructor(private as: AdministratorService) { }
 
   ngOnInit() {
+  }
+
+  addAdministrator() {
+    this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
+    this.model = new Administrator(0, "", 0, "", "", "")
   }
 
 }

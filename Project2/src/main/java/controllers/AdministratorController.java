@@ -37,7 +37,7 @@ public class AdministratorController
 			return as.getAdministratorById(id);
 		}
 		
-	 @PostMapping("/register")
+	 @PostMapping("/add")
 		public void insertAdministrator(@RequestBody Administrator a) {
 			as.addAdministrator(a);
 		}
