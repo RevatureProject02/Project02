@@ -1,5 +1,5 @@
 # for pom.properties
-#pom.properties
+pom.properties
 
 # Compiled class file
 *.class
