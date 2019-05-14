@@ -26,22 +26,19 @@ public class Administrator implements Serializable
 	@GeneratedValue(generator="ad_seq",strategy=GenerationType.SEQUENCE)
 	private int id;
 	
-	@Column(name="ad_name")
-	@NotEmpty
+	@Column(name="ad_name")	
 	private String name;
 	
-	@Column(name="ad_age")
-	@NotEmpty
+	@Column(name="ad_age")	
 	private int age;
 	
-	@Column(name="ad_username")
-	@NotEmpty
+	@Column(name="ad_username")	
 	private String username;
 	
 	@Column(name="ad_password")
 	private String password;
 	
-	@Pattern(regexp="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}")
+	//@Pattern(regexp="\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}")
 	@Column(name="ad_email")
 	private String email;
 

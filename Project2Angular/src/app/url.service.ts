@@ -10,6 +10,8 @@ export class UrlService {
   public showCourses: string = this.base + "course/all/";
   public addMeeting: string = this.base + "meeting/add/";
   public showMeetings: string = this.base + "meeting/all/";
-
+  public addAdmin: string = this.base + "administrator/add/"
+  public getAdmin: string = this.base + "administrator/all/"
+  
   constructor() { }
 }

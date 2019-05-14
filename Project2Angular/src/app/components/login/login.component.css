@@ -4,6 +4,9 @@ body{
     padding: 0;
 }
 
+input.radio{
+    width: auto;
+}
 .outcontainer{
     position: absolute;
     margin: auto;

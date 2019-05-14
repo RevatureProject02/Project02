@@ -26,8 +26,9 @@ import { StudentComponent } from './components/student/student.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
-
-
+import { AuthGuard } from './auth.guard';
+import { AdminComponent } from './admin/admin.component'
+import { AngularWebStorageModule } from 'angular-web-storage'
 
 @NgModule({
   declarations: [
@@ -53,12 +54,14 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     StudentComponent,
     StudentProfileComponent,
     AddAdminComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
+    AngularWebStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
