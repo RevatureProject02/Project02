@@ -19,7 +19,6 @@ import services.AdvisorServices;
 
 @Controller
 @RequestMapping("MEI/Advisor")
-@CrossOrigin
 public class AdvisorController{
 	
 	@Autowired
@@ -39,6 +38,8 @@ public class AdvisorController{
 	public void insertAdvisor(@RequestBody Advisor a) {
 		as.insertAdvisor(a);
 	}
+	
+	
 	
 	
 	

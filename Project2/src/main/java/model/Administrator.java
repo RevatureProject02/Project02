@@ -11,10 +11,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="Administrator")
 public class Administrator implements Serializable
 {
+	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="ad_id")
 	@SequenceGenerator(sequenceName="administrator_seq",name="ad_seq")
@@ -22,12 +27,15 @@ public class Administrator implements Serializable
 	private int id;
 	
 	@Column(name="ad_name")
+	@NotEmpty
 	private String name;
 	
 	@Column(name="ad_age")
+	@NotEmpty
 	private int age;
 	
 	@Column(name="ad_username")
+	@NotEmpty
 	private String username;
 	
 	@Column(name="ad_password")
@@ -37,6 +45,7 @@ public class Administrator implements Serializable
 	@Column(name="ad_email")
 	private String email;
 
+	
 	public Administrator() {
 		super();
 		// TODO Auto-generated constructor stub

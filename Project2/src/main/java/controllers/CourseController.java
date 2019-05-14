@@ -59,8 +59,10 @@ public class CourseController {
 	// update
 	@PutMapping(value = "/update")
 	@ResponseBody
-	public void updateCourse(@RequestBody Course c) {
+	public void updateCourse(@RequestBody @Valid Course c) {
 		cs.updateCourse(c);
 	}
+	
+	
 
 }
