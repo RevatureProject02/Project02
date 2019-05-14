@@ -42,15 +42,14 @@ export class LoginComponent implements OnInit {
      const role = target.querySelector('input[name="role"]:checked').value;
     this.auth.getUserDetails(username, password, role).subscribe(data => {
       if(data.success) {
-        this.router.navigate(['admin'])
+        localStorage.setItem('User',username);
+        localStorage.setItem('Password',password);
+        localStorage.setItem('Role',role);
+        this.router.navigate(['/home'])
         this.auth.setLoggedIn(true);
       }else{
         window.alert(data.message);
       }
     })
-      console.log(username, password, role);
-      localStorage.setItem('User',username);
-      localStorage.setItem('Password',password);
-      localStorage.setItem('Role',role);
   }
 }
