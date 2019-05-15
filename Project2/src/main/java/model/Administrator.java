@@ -34,7 +34,7 @@ public class Administrator implements Serializable
 	@NotEmpty
 	private int age;
 	
-	@Column(name="ad_username")
+	@Column(name="ad_username", unique=true)
 	@NotEmpty
 	private String username;
 	

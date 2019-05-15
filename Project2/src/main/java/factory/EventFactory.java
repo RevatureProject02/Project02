@@ -1,6 +1,8 @@
 package factory;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -16,6 +18,7 @@ import model.Advisor;
 import model.Course;
 import model.Meeting;
 import model.Professor;
+import services.ProfessorServices;
 
 public class EventFactory {
 
@@ -28,12 +31,20 @@ public class EventFactory {
                 .setApplicationName(CalendarQuickstart.APPLICATION_NAME)
                 .build();
     //
-        
+//        List<Professor> listOfProfessors = m.getProfessors();
+//        List<Advisor> listOfAdvisors = m.getAdvisors();
+//
+//        if(m.getLocation().equals("Professor's Office")) {
+//        	m.setLocation("Room " + listOfProfessors.get(0).getOffice());
+//        }
+//        if(m.getLocation().equals("Advisor's Office")) {
+//        	m.setLocation("Advisory Office");
+//        }
     //creating the event object and 
         Event event = new Event()
         	    .setSummary(m.getSummary())
         	    .setLocation(m.getLocation())
-        	    .setDescription("Meeting event insertMeeting() method!");
+        	    .setDescription("You might have a meeting.");
 
         
         //this block is for setting the start time of the meeting
@@ -59,18 +70,31 @@ public class EventFactory {
         //this block uses loops to set the list of attendees based off of lists to be filled up when a 
         //meeting is instantiated on the java side.
         //im not sure if this will work right, probably will be revisited
-//        	EventAttendee[] attendees = new EventAttendee[] {};
+        	
 //        	int i=0;
+////        	if(m.getAdvisors()!=null) {
 //        			for(Advisor advisor : m.getAdvisors()) {
-//    	    attendees[i] = new EventAttendee().setEmail(advisor.getEmail());
+//        				EventAttendee attendee = new EventAttendee();
+//        				attendee.setEmail(advisor.getEmail());
+//    	    attendees[i] = attendee;
 //    	    i++;
-//        			}
+//        			//}
+//        	}
+////        	if(m.getProfessors()!=null) {
 //        			for(Professor professor : m.getProfessors()) {
-//    	    attendees[i] = new EventAttendee().setEmail(professor.getEmail());
+//        				EventAttendee attendee = new EventAttendee();
+//        				attendee.setEmail(professor.getEmail());
+//    	    attendees[i] = attendee;
 //    	    i++;
-//        			}
-//        	
-//        	event.setAttendees(Arrays.asList(attendees));
+        			//}
+        	//}
+        	
+        	EventAttendee attendee = new EventAttendee();
+        	attendee.setEmail("professororadvisor@gmail.com");
+        	EventAttendee[] attendees = new EventAttendee[] {attendee};
+        	
+        	
+        	event.setAttendees(Arrays.asList(attendees));
         //
             //calendarId is referring to a gmail to post to.. primary means the logged-in and authenticated gmail user
         	String calendarId = "primary";//primary could be set to our session variable once login is made
