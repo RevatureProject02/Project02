@@ -4,10 +4,10 @@
     <input type="text" name="summary" id="summary" [(ngModel)]=model.summary>
   </div>
   <div>
-	<label for="professorOrAdvisor">Select the Person you would like to Meet with:
-    <select id="professor" ng-options="professor for professor in professor_list">
-      <!--<div *ngFor="let professor of professor_list">-->
-      <!--<option value="">{{professor.name | json}}</option>-->
+	<label for="professor">Select the Professor you would like to Meet with:
+    <select name="professor1" [(ngModel)]=model.professor1>
+      <option></option>
+      <option *ngFor="let professor of professor_list" (change)="getAttendingProfessor()">{{professor.name}}</option>
 	`</select>
   <div>
 	<label for="time">Select a Start Time:
@@ -37,7 +37,8 @@
   <div>
       <label for="location">Pick a Location:
       <select id="location" name="location" [(ngModel)]=model.location>
-        <option value="Office">Office</option>
+        <option name="professorsOffice">Professor's Office</option>
+        <option name="advisorsOffice">Advisor's Office</option>
       </select>
     
  

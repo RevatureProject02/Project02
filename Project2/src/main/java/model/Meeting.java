@@ -71,7 +71,7 @@ public class Meeting implements Serializable {
 
 
 	public Meeting(int id, String summary, String myDate, String time, String location, List<Advisor> advisors,
-			List<Professor> professors, List<Student> students) {
+			List<Professor> professors) {
 		super();
 		this.id = id;
 		this.summary = summary;
@@ -80,7 +80,6 @@ public class Meeting implements Serializable {
 		this.location = location;
 		this.advisors = advisors;
 		this.professors = professors;
-		this.students = students;
 	}
 
 
