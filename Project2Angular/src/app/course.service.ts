@@ -22,4 +22,9 @@ export class CourseService {
   showCourses(): Observable<any>{
     return this.http.get(this.url.showCourses, {responseType: "text", headers: this.headers });
   }
+
+  showCoursesOfStudent(): Observable<any>
+  {
+    return this.http.get(this.url.showCoursesOfStudents, {responseType: 'text', headers: this.headers});
+  }
 }

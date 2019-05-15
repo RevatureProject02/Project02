@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class UrlService {
   public base: string = "http://localhost:8085/Project2/";
   //public delete: string = this.base + "delete/";
+  public showCourses: string = this.base + "course/all/";
+  public showCoursesOfStudents: string = this.base + "student/courseList";
   public addMeeting: string = this.base + "meeting/add/";
   public showMeetings: string = this.base + "meeting/all/";;
   
@@ -41,7 +43,6 @@ export class UrlService {
   //professor
 
   //Courses
-  public showCourses: string = this.base + "course/all/";
   public addCourse: string = this.base + "course/add/";
   public deleteCourse: string = this.base + "course/delete/{id}/";
   public updateCourse: string = this.base + "course/update/";
