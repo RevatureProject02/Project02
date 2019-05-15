@@ -59,4 +59,7 @@ public class ProfessorRepository {
 		Session s = sf.getCurrentSession();
 		s.delete(s.get(Professor.class, id));
 	}
+
+
+
 }

@@ -40,7 +40,6 @@ public class ProfessorController
 	}
 	
 	@PostMapping(value="/add")
-	@ResponseBody
 	public void insertProfessor(@RequestBody Professor p) {
 		ps.insertProfessor(p);
 	}

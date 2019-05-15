@@ -32,7 +32,13 @@ public class Administrator implements Serializable
 	@Column(name="ad_age")	
 	private int age;
 	
+<<<<<<< HEAD
 	@Column(name="ad_username", unique = true)
+=======
+	@Column(name="ad_username", unique=true)
+	@NotEmpty
+
+>>>>>>> bd90451542ae93abd950dd1fcad645b3aee2e7cd
 	private String username;
 	
 	@Column(name="ad_password")

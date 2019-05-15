@@ -1,3 +1,5 @@
+import { Professor } from './professor';
+import { Advisor } from './advisor';
 
 export class Meeting {
     constructor(
@@ -6,6 +8,8 @@ export class Meeting {
         public myDate: string,
         public time: string,
         public location: string,
+        public professors: Professor[],
+        public advisors: Advisor[]
         ){}
         
     }
