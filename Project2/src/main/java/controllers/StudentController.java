@@ -107,13 +107,5 @@ public class StudentController
 	public List<Course> getCoursesOfStudent(@RequestBody Student s)
 	{
 		return new CourseServices().getAllCoursesOfStudent(s);
-	}
-	
-	@GetMapping(value = "/grades")
-	public List<Assignment> getAssignemts(@RequestBody Course c)
-	{
-		return new AssignmentServices().getAssignmentsOfCourse(c);
-	}
-
-	
+	}	
 }
