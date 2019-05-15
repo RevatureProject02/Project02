@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {AngularWebStorageModule} from 'angular-web-storage';
 //components:
 import { AppComponent } from './app.component';
 import { CreateAssignmentsComponent } from './components/create-assignments/create-assignments.component';
@@ -26,8 +27,8 @@ import { StudentComponent } from './components/student/student.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
-
-
+import { AuthGuard } from './auth.guard';
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -53,12 +54,14 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     StudentComponent,
     StudentProfileComponent,
     AddAdminComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
+    AngularWebStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,7 +37,7 @@ public class AdministratorRepository {
 	
 	public void insertAdministrator(Administrator a) {
 		Session s = sf.getCurrentSession();
-		s.persist(a);
+		s.save(a);
 	}
 	public void updateAdministrator(Administrator a) {
 		Session s = sf.getCurrentSession();

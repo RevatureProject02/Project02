@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import model.Advisor;
 import model.Professor;
 import model.Student;
+import services.AdministratorServices;
 import services.AdvisorServices;
 import services.ProfessorServices;
 import services.StudentServices;
@@ -23,6 +24,8 @@ public class LoginController
 	ProfessorServices ps;
 	@Autowired
 	AdvisorServices as;
+	@Autowired
+	AdministratorServices ads;
 	
 	@RequestMapping ("/LoginServer")
 	@ResponseBody
