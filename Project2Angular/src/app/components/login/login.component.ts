@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model = new Administrator(0, "name", 0, "username", "password", "email")
+  model = new Administrator(0, "", null, "", "", "")
 
   flip() {
     document.getElementById("form").style.transform = 'rotateY(180deg)';
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
  addAdministrator() {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
-    this.model = new Administrator(0, "", 0, "", "", "")
+    this.model = new Administrator(0, "", null, "", "", "")
   }
   loginUser(event){
     // event.preventDefault();
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home'])
         this.auth.setLoggedIn(true);
       }else{
-        alert("You shall not paaaaaassssss!!")
+        alert("Incorrect credentials!!")
       }
     }) 
   }

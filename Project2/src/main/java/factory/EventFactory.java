@@ -154,17 +154,17 @@ public class EventFactory {
         	
 
         	
-
+System.out.println(c.getDays());
 
 //below is code that can make a meeting recurring or set reminders via gmail for the meeting
         	//need to set the byday to be dependent on a dropdown box that fits the api's format..
         	//MO, TU, WE, TH, FR.. any days can be used, just put them in the right order..
         	//values of our dropdown box should be "MO, WE, FR", "TU, TH", "MO, WE", "FR".. these would be good starters
-        	String[] recurrence = new String[] {"RRULE:FREQ=WEEKLY;BYDAY=" + c.getDays() + ";UNTIL=2019-08-16"};
+        	String[] recurrence = new String[] {"RRULE:FREQ=WEEKLY;UNTIL=20190801T170000Z;BYDAY=" + c.getDays()};
         	event.setRecurrence(Arrays.asList(recurrence));
         
             //calendarId is referring to a gmail to post to.. primary means the logged-in and authenticated gmail user
-        	String calendarId = "primary";//primary could be set to our session variable once login is made
+        	String calendarId = "professororadvisor@gmail.com";//primary could be set to our session variable once login is made
         								  //i think we will use caching to store the logged-in user
         	event = service.events().insert(calendarId, event).execute();
         	System.out.printf("Event created: %s\n", event.getHtmlLink());
