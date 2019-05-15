@@ -16,16 +16,17 @@ export class AdvisorService {
   constructor(private http: HttpClient, private url: UrlService) {
     this.headers.append('Content-Type', 'application/json');
    }
-
+  
+   getAdvisors(): Observable<any>{
+     return this.http.get(this.url.allAdvisors, { responseType: "text", headers: this.headers });
+   }
    addAdvisor(a: Advisor): Observable<any>{
      return this.http.post(this.url.newAdvisor, a, {headers: this.headers});
    }
 
-   getAdvisors(): Observable<any>{
-     return this.http.get(this.url.allAdvisors, { responseType: "text", headers: this.headers });
-   }
+   
 
-   deleteAdvisor(): Observable<any>{
-     return this.http.delete(this.url.deleteAdvisor)
-   }
+  //  deleteAdvisor(): Observable<any>{
+  //    return this.http.delete(this.url.deleteAdvisor )
+  //  }
 }

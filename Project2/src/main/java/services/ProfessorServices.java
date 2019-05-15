@@ -34,5 +34,4 @@ public class ProfessorServices
 	{
 		pr.deleteProfessorById(id);
 	}
-
 }

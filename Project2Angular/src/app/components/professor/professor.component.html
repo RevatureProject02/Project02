@@ -1,0 +1,51 @@
+<app-admin-navbar></app-admin-navbar>
+<h3>List Of All Professors</h3>
+<div class="form-group">
+  <label for="sel2">Professors:</label>
+  <select class="form-control" id="sel2">
+    <option *ngFor="let professor of availableProfessors">{{professor.name}} id:{{professor.id}} age: {{professor.age}}</option>
+  </select>
+  
+</div>
+
+<br>
+<br>
+
+<h3> Add new Professor</h3>
+<form>
+  <div>
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name" [(ngModel)]=professorModel.name>
+  </div>
+  <div>
+  <label for="age">Age: </label>
+  <input type="number" id="age" name="age" [(ngModel)]=professorModel.age>
+  </div>
+  <div>
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" [(ngModel)]=professorModel.username>
+  </div>
+  <div>
+      <label for="password">Password: </label>
+      <input type="text" id="password" name="password" [(ngModel)]=professorModel.password>
+  </div>
+  <div>
+  <label for="email">Email: </label>
+  <input type="email" id="email" name="email" [(ngModel)]=professorModel.email>
+  </div>
+  <div>
+      <label for="office">Office: </label>
+      <input type="text" id="office" name="office" [(ngModel)]=professorModel.office>
+      </div>
+  <button (click)="addProfessor()"> Add Professor</button>
+
+</form>
+<br>
+<br>
+
+<h3>Delete Professor</h3>
+<ul>
+  <li *ngFor="let professor of availableProfessors">
+    <label>{{professor.name}} id: {{professor.id}}</label><button (click)="deleteAdvisor()">delete</button>
+  </li>
+ </ul>

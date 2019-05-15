@@ -29,7 +29,6 @@ public class ProfessorRepository {
 		Session s = sf.getCurrentSession();
 		return (int)s.save(p);
 	}
-
 	
 	public List<Professor> selectAllProfessors() {
 		

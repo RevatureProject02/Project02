@@ -17,12 +17,12 @@ import { AdminComponent } from './admin/admin.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AdvisorComponent } from './components/advisor/advisor.component';
 import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+import { ProfessorComponent } from './components/professor/professor.component';
 
 const routes: Routes = [
   {
     path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard]
+    component: AdminComponent
   },
   {
     path: 'createcourse',
@@ -76,6 +76,10 @@ const routes: Routes = [
   {
     path: 'advisor',
     component: AdvisorComponent
+  },
+  {
+    path: 'professor',
+    component: ProfessorComponent
   },
   {
     path: 'create-assignments',

@@ -57,4 +57,5 @@ public class CourseRepository
 		Session s = sf.getCurrentSession();
 		s.save(c);
 	}
+	
 }

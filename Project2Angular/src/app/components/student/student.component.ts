@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/student';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',

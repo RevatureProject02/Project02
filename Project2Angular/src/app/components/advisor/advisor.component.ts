@@ -18,16 +18,18 @@ export class AdvisorComponent implements OnInit {
     this.allAdvisors();
   }
 
+
+  allAdvisors(){
+    this.advisor.getAdvisors().subscribe(x => this.availableAdvisors = JSON.parse(x));
+  }
+  
   addAdvisor(){
     this.advisor.addAdvisor(this.advisorModel).subscribe(x=>{});
     this.advisorModel = new Advisor(0,"",0,"","","");
   }
-  allAdvisors(){
-    this.advisor.getAdvisors().subscribe(x => this.availableAdvisors = JSON.parse(x));
-  }
 
-  deleteAdvisor(){
-    this.advisor.deleteAdvisor().subscribe(x => this.deleteAdvisor = JSON.parse(x));
-  }
+  // deleteAdvisor(){
+  //   this.advisor.deleteAdvisor().subscribe(x => this.deleteAdvisor = JSON.parse(x));
+  // }
 
 }

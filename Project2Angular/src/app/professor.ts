@@ -6,6 +6,6 @@ export class Professor {
     public username: string,
     public password: string,
     public email: string,
-    public office: string
+    public office: number
     ){}
 }

@@ -30,6 +30,8 @@ import { AuthGuard } from './auth.guard';
 import { AdminComponent } from './admin/admin.component'
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { AdvisorComponent } from './components/advisor/advisor.component';
+import { StudentcourseComponent } from './components/studentcourse/studentcourse.component';
+import { ProfessorComponent } from './components/professor/professor.component';
 
 
 @NgModule({
@@ -59,6 +61,8 @@ import { AdvisorComponent } from './components/advisor/advisor.component';
     AdminComponent,
     BackButtonComponent,
     AdvisorComponent,
+    StudentcourseComponent,
+    ProfessorComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,9 @@
+<app-admin-navbar></app-admin-navbar>
 <h3>List Of All Advisors</h3>
 <div class="form-group">
   <label for="sel1">Advisors:</label>
-  <select class="form-control" id="sel2">
-    <option *ngFor="let advisor of availableAdvisors">{{advisor.name}} id:{{advisor.id}}</option>
+  <select class="form-control" id="sel1">
+    <option *ngFor="let advisor of availableAdvisors">{{advisor.name}} id:{{advisor.id}} age: {{advisor.age}}</option>
   </select>
   
 </div>
@@ -20,6 +21,14 @@
   <label for="age">Age: </label>
   <input type="number" id="age" name="age" [(ngModel)]=advisorModel.age>
   </div>
+  <div>
+      <label for="username">Userame: </label>
+      <input type="text" id="username" name="username" [(ngModel)]=advisorModel.username>
+  </div>
+  <div>
+      <label for="password">Password: </label>
+      <input type="text" id="password" name="password" [(ngModel)]=advisorModel.password>
+      </div>
   <div>
   <label for="email">Email: </label>
   <input type="email" id="email" name="email" [(ngModel)]=advisorModel.email>
