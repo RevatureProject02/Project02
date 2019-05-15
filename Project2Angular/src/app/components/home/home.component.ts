@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminNavbarComponent } from '../admin-navbar/admin-navbar.component';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +10,20 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  fillBar()
+  buildBar()
   {
-    var bar = document.getElementById("navigationBar");
+   
+  }
+ 
+  ngOnInit() 
+  {
+    var baseBar = document.getElementById("nav-bar");
     switch(localStorage.getItem('role'))
     {
-      case "admin": bar.outerHTML = ('<app-admin-navbar></app-admin-navbar>');
-      case "advisor": bar.outerHTML = ('<app-advisor-navbar></app-advisor-navbar>');
-      case "professor": bar.outerHTML = ('<app-professor-navbar></app-professor-navbar>');
-      case "student": bar.outerHTML = ('<app-student-navbar></app-student-navbar>');
-      default : ;
+        case 'admin': baseBar.hidden = true; document.getElementById("adminbar").hidden = false; break;
+        case 'advisor':  baseBar.hidden = true; document.getElementById("advisorbar").hidden = false; break;
+        case 'professor': baseBar.hidden = true; document.getElementById("professorbar").hidden = false; break; 
+        case 'student':  baseBar.hidden = true; document.getElementById("studentbar").hidden = false; break;
     }
-  }
-  ngOnInit() {
   }
 }

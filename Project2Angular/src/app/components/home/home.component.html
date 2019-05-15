@@ -18,13 +18,18 @@
   <h6>Modern Education Integration</h6>
 </div>
 
-<nav onload = "fillBar()" class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-  <a class="navbar-brand" style="color:white">More about MEI</a>
+<app-admin-navbar id = 'adminbar' hidden = 'true'></app-admin-navbar>
+<app-advisor-navbar id = 'advisorbar'  hidden = 'true'></app-advisor-navbar>
+<app-student-navbar id = 'studentbar'  hidden = 'true'></app-student-navbar>
+<app-professor-navbar id = 'professorbar'  hidden = 'true'></app-professor-navbar>
+
+<nav  id = "nav-bar" class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" style="color:rgb(34, 32, 32)">More about MEI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div id = "navigationBar" class="collapse navbar-collapse" id="collapsibleNavbar">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
@@ -32,6 +37,7 @@
     </ul>
   </div>  
 </nav>
+
 
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -44,7 +50,8 @@
       <p>Make Sure to Stay Up To Date</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Upcoming site changes</a>
+          <a class="nav-link active" routerLinkActive="active current" routerLink="/viewschedule">View Schedule</a>
+          
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Connect with your school</a>

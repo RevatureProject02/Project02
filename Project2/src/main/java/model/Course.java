@@ -34,7 +34,7 @@ public class Course implements Serializable
 	private String name;
 	
 	@Column(name="c_time")
-	private DateTime time;
+	private String time;
 	
 	@Column(name="c_location")
 	private String location;
@@ -62,7 +62,7 @@ public class Course implements Serializable
 		this.assignments = assignments;
 	}
 
-	public void setTime(DateTime time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
@@ -74,7 +74,7 @@ public class Course implements Serializable
 		this.days = days;
 	}
 
-	public Course(String name, DateTime time, String location, String days) {
+	public Course(String name, String time, String location, String days) {
 		super();
 		this.name = name;
 		this.time = time;
@@ -107,7 +107,7 @@ public class Course implements Serializable
 		return location;
 	}
 
-	public DateTime getTime() {
+	public String getTime() {
 		return time;
 	}
 

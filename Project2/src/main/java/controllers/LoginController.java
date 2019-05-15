@@ -34,6 +34,7 @@ public class LoginController {
 	@Autowired
 	AdministratorServices ads;
 
+
 	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, String> handLogin(@RequestBody User u) {
 		String Username = u.getUsername();
@@ -55,6 +56,7 @@ public class LoginController {
 				return Collections.singletonMap("key", "Administrator");
 			} else {
 				return Collections.singletonMap("key", "failed to obtain matching user");}
+
 	}
 
 	private boolean checkStudentList(String username, String password) {

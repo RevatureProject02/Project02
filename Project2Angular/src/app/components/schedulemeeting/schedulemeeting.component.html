@@ -29,11 +29,7 @@
         <option value="T16:00:00">4:00pm</option>
         <option value="T16:30:00">4:30pm</option>
 
-  </select>
- <div>
-    <label for="myDate">Enter a Date:
-    <input type="text" name="myDate" id="myDate" [(ngModel)]=model.myDate>
-  
+<form>
   <div>
       <label for="location">Pick a Location:
       <select id="location" name="location" [(ngModel)]=model.location>
@@ -42,7 +38,19 @@
       </select>
     
  
-  <button (click)=insertMeeting()>Add to Schedule</button>
-  <button (click)=showMeetings()>Show Meetings</button>
-  <div *ngFor="let meeting of meeting_list">
-      <p>{{meeting | json}}</p>
+   </select>
+   <div>
+     <label for="myDate">Enter a Date:
+     <input type="text" name="myDate" id="myDate" [(ngModel)]=model.myDate>
+   <div>
+       <label for="location">Pick a Location:
+       <select id="location" name="location" [(ngModel)]=model.location>
+         <option value="Office">Office</option>
+       </select>
+  
+   <button (click)=insertMeeting()>Add to Schedule</button>
+   <button (click)=showMeetings()>Show Meetings</button>
+   <div *ngFor="let meeting of meeting_list">
+       <p>{{meeting | json}}</p>
+ 
+
