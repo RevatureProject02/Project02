@@ -18,11 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import model.Meeting;
 import services.MeetingServices;
 
-@Controller
+@RestController
 @RequestMapping("meeting")
 @CrossOrigin
 public class MeetingController 
@@ -42,8 +43,7 @@ public class MeetingController
 	}
 	
 	@PostMapping(value = "/add")
-	@ResponseBody
-	public void insertMeeting(@RequestBody Meeting m) {
+		public void insertMeeting(@RequestBody Meeting m) {
 			ms.insertMeeting(m);
 	}
 	

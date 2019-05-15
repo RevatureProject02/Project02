@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meeting } from 'src/app/meeting';
 import { MeetingService } from 'src/app/meeting.service';
 import { ProfessorService } from 'src/app/professor.service';
+import { Professor } from 'src/app/professor';
 
 @Component({
   selector: 'app-schedulemeeting',
@@ -9,10 +10,13 @@ import { ProfessorService } from 'src/app/professor.service';
   styleUrls: ['./schedulemeeting.component.css']
 })
 export class SchedulemeetingComponent implements OnInit {
-  
+  public professor1: Professor;
   meeting_list = [];
   professor_list = [];
-  model = new Meeting(0, "summary", "myDate", "time", "location");
+  professors = [];
+  advisors = [];
+  
+  model = new Meeting(0, "summary", "myDate", "time", "location", this.advisors,  this.professors);
   constructor(private ms: MeetingService, private ps: ProfessorService) { }
 
   ngOnInit() {
@@ -20,7 +24,7 @@ export class SchedulemeetingComponent implements OnInit {
   }
   insertMeeting(){
     this.ms.insertMeeting(this.model).subscribe(x=>{"this does nothing"});
-    this.model = new Meeting(0, "", "yyyy-mm-dd", "","");
+    this.model = new Meeting(0, "", "yyyy-mm-dd", "","",[],[]);
   }
 
   showMeetings() {
@@ -29,5 +33,10 @@ export class SchedulemeetingComponent implements OnInit {
 
   getProfessors(){
     this.ps.getProfessors().subscribe(x => this.professor_list = JSON.parse(x));
+  }
+  getAttendingProfessor(){
+    this.model.professors=[];
+    
+    this.model.professors.push(this.professor1);
   }
 }
