@@ -53,13 +53,9 @@ export class LoginComponent implements OnInit {
       }else{
         alert("You shall not paaaaaassssss!!")
       }
-<<<<<<< HEAD
     })
-    console.log(username, password, role);
+    
 
-=======
-    }) 
->>>>>>> 5b1aa49299e4029103d97100781166616f6a52b2
   }
 
 }

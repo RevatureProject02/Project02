@@ -27,7 +27,7 @@ import services.CourseServices;
 
 @Controller
 @RequestMapping("course")
-@CrossOrigin
+@CrossOrigin(origins= "*", allowedHeaders = "*", value = "*")
 public class CourseController {
 
 	@Autowired
