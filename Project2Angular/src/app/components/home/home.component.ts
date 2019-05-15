@@ -13,13 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() 
   {
     var baseBar = document.getElementById("nav-bar");
-<<<<<<< HEAD
-=======
-    var adminBar = document.getElementById("adminbar");
-    var advisorBar = document.getElementById("advisorbar");
-    var studentBar = document.getElementById('studentbar');
-    var professorBar = document.getElementById('professorbar');
->>>>>>> f63ef46b2125d166bd6dd4103dafde41084d0d90
     switch(localStorage.getItem('Role'))
     {
         case 'admin': baseBar.hidden = true; document.getElementById('adminbar').hidden = false; break;
@@ -28,8 +21,8 @@ export class HomeComponent implements OnInit {
         case 'student':  baseBar.hidden = true; document.getElementById('studentBar').hidden = false; break;
         default: baseBar.hidden = false;  
         document.getElementById('adminbar').hidden = true; 
-        document.getElementById('advisor').hidden = true; 
-        document.getElementById('professor').hidden = true; 
+        document.getElementById('advisorbar').hidden = true; 
+        document.getElementById('professorBar').hidden = true; 
         document.getElementById('studentBar').hidden = true;
     }
     
