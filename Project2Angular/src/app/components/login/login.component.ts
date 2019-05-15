@@ -35,13 +35,13 @@ export class LoginComponent implements OnInit {
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
     const role = target.querySelector('input[name="role"]:checked').value;
+    this.auth.getUserDetails(username, password, role).subscribe(data => { 
     localStorage.setItem("Username",username);
-    localStorage.setItem("Password",password);
-    localStorage.setItem("Role",role);
-    this.auth.getUserDetails(username, password, role).subscribe(data => {
+     localStorage.setItem("Password",password);
+     localStorage.setItem("Role",role);
       console.log(data.key);
       if(data.key == "Administrator") {
-        this.router.navigate(['admin'])
+        this.router.navigate(['home'])
         this.auth.setLoggedIn(true);
       }else if(data.key == "Student") {
         this.router.navigate(['home'])
