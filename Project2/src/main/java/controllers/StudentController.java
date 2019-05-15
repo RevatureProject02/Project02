@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import model.Assignment;
 import model.Course;
 import model.Student;
+import services.AssignmentServices;
 import services.CourseServices;
 import services.StudentServices;
 
@@ -105,5 +108,12 @@ public class StudentController
 	{
 		return new CourseServices().getAllCoursesOfStudent(s);
 	}
+	
+	@GetMapping(value = "/grades")
+	public List<Assignment> getAssignemts(@RequestBody Course c)
+	{
+		return new AssignmentServices().getAssignmentsOfCourse(c);
+	}
+
 	
 }

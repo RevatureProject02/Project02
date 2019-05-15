@@ -12,9 +12,11 @@ import { ViewscheduleComponent } from './components/viewschedule/viewschedule.co
 import { StudentGradesComponent } from './components/student-grades/student-grades.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { StudentComponent } from './components/student/student.component';
-import { CanActivate } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { AdminComponent } from './admin/admin.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AdvisorComponent } from './components/advisor/advisor.component';
+import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,11 @@ const routes: Routes = [
     component: SetavailabilityComponent
   },
   {
+    path: 'course-registration',
+    component: CourseRegistrationComponent
+
+  },
+  {
     path: 'viewschedule',
     component: ViewscheduleComponent
   },
@@ -45,6 +52,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'home',
@@ -61,6 +72,10 @@ const routes: Routes = [
   {
     path: 'student',
     component: StudentComponent
+  },
+  {
+    path: 'advisor',
+    component: AdvisorComponent
   },
   {
     path: 'create-assignments',

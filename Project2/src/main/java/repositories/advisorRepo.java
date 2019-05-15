@@ -35,6 +35,19 @@ public class advisorRepo {
 		return advisors;
 	}
 	
+	public String deleteAdvisorById(int id) {
+		Session s = sf.getCurrentSession();
+		
+		Advisor a = (Advisor)s.get(Advisor.class, id);
+		s.delete(s.get(Advisor.class, id));
+		return a.getName();
+	}
+	
+	public Advisor getById(int id){
+		Session s = sf.getCurrentSession();
+		return (Advisor)s.get(Advisor.class, id);
+	}
+	
 	
 	
 

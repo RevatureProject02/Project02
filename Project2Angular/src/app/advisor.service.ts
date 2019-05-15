@@ -18,6 +18,14 @@ export class AdvisorService {
    }
 
    addAdvisor(a: Advisor): Observable<any>{
-     return this.http.post(this.url.base, a, {headers: this.headers});
+     return this.http.post(this.url.newAdvisor, a, {headers: this.headers});
+   }
+
+   getAdvisors(): Observable<any>{
+     return this.http.get(this.url.allAdvisors, { responseType: "text", headers: this.headers });
+   }
+
+   deleteAdvisor(): Observable<any>{
+     return this.http.delete(this.url.deleteAdvisor)
    }
 }

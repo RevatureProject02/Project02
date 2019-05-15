@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from'@angular/common';
 
 @Component({
   selector: 'app-viewschedule',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewscheduleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private locay: Location) { }
 
   ngOnInit() {
   }
 
+  goBack(){
+    this.locay.back;
+  }
 }
+
+

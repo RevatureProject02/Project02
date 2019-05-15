@@ -31,7 +31,7 @@ public class LoginController
 	@ResponseBody
 	public String handLogin(@RequestBody MultiValueMap<String,String> formParams)
 	{
-		String Username = formParams.getFirst("Username");
+		String Username = formParams.getFirst("Username"); //Checks the first instance of this object being found
 		String Password = formParams.getFirst("Password");
 		//This will go through until true (then that defines permissions)
 		if(checkStudentList(Username,Password))

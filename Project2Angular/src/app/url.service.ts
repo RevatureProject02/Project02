@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class UrlService {
   public base: string = "http://localhost:8085/Project2/";
-  public addCourse: string = this.base + "course/add/";
   //public delete: string = this.base + "delete/";
-  public showCourses: string = this.base + "course/all/";
   public addMeeting: string = this.base + "meeting/add/";
-  public showMeetings: string = this.base + "meeting/all/";
+  public showMeetings: string = this.base + "meeting/all/";;
+  
+
 
   public getProfessors: string = this.base + "professor/all";
 
@@ -22,9 +22,10 @@ export class UrlService {
   public addStudent: string = this.base + "student/add";
   public showStudents: string = this.base + "student/all";
   public studentLogin: string = this.base + "student/login";
+  public showGrades: string = this.base + "student/grades";
 
   //Professor methods
-  public addProfessor: string = this.base + "Professor/add";
+  public addProfessor: string = this.base + "professor/add";
   public showProfessors: string = this.base + "professor/all";
 
   //Logins
@@ -32,9 +33,19 @@ export class UrlService {
   public profLogin: string =  this.base + "professor/login";
 
   //advisor
-
+  public allAdvisors: string = this.base + "advisor/allAdvisors/";
+  public findAdvisor: string = this.base + "advisor/advisorById/";
+  public newAdvisor: string = this.base + "advisor/addAdvisor/";
+  public deleteAdvisor: string = this.base +"advisor/delete/{id}";
 
   //professor
+
+  //Courses
+  public showCourses: string = this.base + "course/all/";
+  public addCourse: string = this.base + "course/add/";
+  public deleteCourse: string = this.base + "course/delete/{id}/";
+  public updateCourse: string = this.base + "course/update/";
+
 
   constructor() { }
 }
