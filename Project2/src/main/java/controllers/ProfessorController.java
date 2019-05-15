@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import model.Meeting;
 import model.Professor;
+import services.Encryptor;
 import services.ProfessorServices;
 
 @RestController
@@ -41,7 +42,9 @@ public class ProfessorController
 	}
 	
 	@PostMapping(value="/add")
-	public void insertProfessor(@RequestBody Professor p) {
+	public void insertProfessor(@RequestBody Professor p)
+	{
+		p.setPassword(new Encryptor().Encrypt(p.getPassword()));
 		ps.insertProfessor(p);
 	}
 	
