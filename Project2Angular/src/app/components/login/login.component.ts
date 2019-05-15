@@ -3,7 +3,7 @@ import { Administrator } from 'src/app/administrator';
 import { AdministratorService } from 'src/app/administrator.service';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
-// import { resolve } from 'path';
+
 
 @Component({
   selector: 'app-login',
@@ -29,28 +29,31 @@ export class LoginComponent implements OnInit {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
     this.model = new Administrator(0, "", 0, "", "", "")
   }
-
-
   loginUser(event){
     // event.preventDefault();
-      
-    
-     const target = event.target;
-     const username = target.querySelector('#username').value;
-     const password = target.querySelector('#password').value;
-     const role = target.querySelector('input[name="role"]:checked').value;
+    const target = event.target;
+    const username = target.querySelector('#username').value;
+    const password = target.querySelector('#password').value;
+    const role = target.querySelector('input[name="role"]:checked').value;
+    localStorage.setItem("Username",username);
+    localStorage.setItem("Password",password);
+    localStorage.setItem("Role",role);
     this.auth.getUserDetails(username, password, role).subscribe(data => {
-      if(data.success) 
-      {
-        localStorage.setItem('Username',username);
-        localStorage.setItem('Password',password);
-        localStorage.setItem('Role',role);
-        this.router.navigate(['/home'])
+      console.log(data.key);
+      if(data.key == "Administrator") {
+        this.router.navigate(['admin'])
         this.auth.setLoggedIn(true);
-      }
-      else
-      {
-        window.alert(data.message);
+      }else if(data.key == "Student") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Advisor") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Professor") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else{
+        alert("You shall not paaaaaassssss!!")
       }
     }) 
   }
