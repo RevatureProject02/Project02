@@ -35,6 +35,11 @@ public class AdvisorServices
 		return adrepo.selectAllAdvisors();
 	}
 	
+	public void deleteAdvisorById(int id) {
+		adrepo.deleteAdvisorById(id);
+	}
+	
+	
 	
 	
 	

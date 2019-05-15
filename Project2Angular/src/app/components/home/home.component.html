@@ -18,35 +18,17 @@
   <h6>Modern Education Integration</h6>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav onload = "fillBar()" class="navbar navbar-expand-sm bg-dark navbar-dark">
 
   <a class="navbar-brand" style="color:white">More about MEI</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <div id = "navigationBar" class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
       </li>    
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/schedulemeeting">Schedule a Meeting</a>
-      </li>
-      <li>    
-        <a class="nav-link" routerLinkActive="active" routerLink="/createcourse">Create a Course</a>
-      </li>   
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/student-grades">Student Grades</a>
-      </li>   
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
-      </li>   
-      <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="/login">Login/Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active current" routerLink="/course-registration">Register For Course</a>
-      </li>
     </ul>
   </div>  
 </nav>

@@ -1,21 +1,23 @@
+<div class="jumbotron" style="margin-bottom:0">
+  <h1>Course Registration</h1>
+  <h6>Modern Education Integration</h6>
+</div>
 <app-student-navbar></app-student-navbar>
 
 <h1>Course Offerings</h1>
 <h3>Course Offering Add/Drop</h3>
 
 <div class="form-group">
-  <label for="sel1">Term:</label>
-  <select class="form-control" id="sel1">
-  </select>
-</div>
-
-<div class="form-group">
   <label for="sel1">Available Courses:</label>
   <select class="form-control" id="sel1">
-    <option *ngFor="let course of availableCourses">{{course.name}}</option>
+    <option *ngFor="let course of availableCourses">{{course.name}} id: {{course.id}}</option>
   </select>
-
-  <p>{{ selected }}</p>
-  
 </div>
+<br>
 
+<h3>Add/Drop </h3>
+<ul>
+  <li *ngFor="let course of availableCourses">
+   <label>{{course.name}}</label><label>{{course.id}}</label><button>add</button><button>drop</button>
+    </li>
+</ul>

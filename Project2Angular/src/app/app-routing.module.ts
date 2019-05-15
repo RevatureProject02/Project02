@@ -11,65 +11,84 @@ import { SetavailabilityComponent } from './components/setavailability/setavaila
 import { ViewscheduleComponent } from './components/viewschedule/viewschedule.component';
 import { StudentGradesComponent } from './components/student-grades/student-grades.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
-import { StudentComponent } from './components/student/student.component'; 
+import { StudentComponent } from './components/student/student.component';
+import { AuthGuard } from './auth.guard';
+import { AdminComponent } from './admin/admin.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AdvisorComponent } from './components/advisor/advisor.component';
 import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+
 const routes: Routes = [
-{
-  path:'createcourse',
-  component: CreatecourseComponent
-},
-{
-  path:"course-registration",
-  component: CourseRegistrationComponent
-},
-{
-  path:'schedulemeeting',
-  component: SchedulemeetingComponent
-},
-{
-  path:'setavailability',
-  component: SetavailabilityComponent
-},
-{
-  path:'viewschedule',
-  component: ViewscheduleComponent
-},
-{
-  path: '',
-  component: HomeComponent
-},
-{
-  path: 'login',
-  component: LoginComponent
-},
-{
-  path: 'home',
-  component: HomeComponent
-},
-{
-  path: 'student-grades',
-  component: StudentGradesComponent
-},      
-{ 
-  path: 'profile/:id', 
-  component: StudentProfileComponent
-},
-{ 
-  path: 'student', 
-  component: StudentComponent
-},
-{
-  path: 'create-assignments',
-  component: CreateAssignmentsComponent
-},
-{
-  path: 'grade-assignments',
-  component: GradeAssignmentsComponent
-},{
-   path: '**',
-   redirectTo: 'home',
-   pathMatch: 'full'
- }
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'createcourse',
+    component: CreatecourseComponent
+  },
+  {
+    path: 'schedulemeeting',
+    component: SchedulemeetingComponent
+  },
+  {
+    path: 'setavailability',
+    component: SetavailabilityComponent
+  },
+  {
+    path: 'course-registration',
+    component: CourseRegistrationComponent
+
+  },
+  {
+    path: 'viewschedule',
+    component: ViewscheduleComponent
+  },
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'student-grades',
+    component: StudentGradesComponent
+  },
+  {
+    path: 'profile/:id',
+    component: StudentProfileComponent
+  },
+  {
+    path: 'student',
+    component: StudentComponent
+  },
+  {
+    path: 'advisor',
+    component: AdvisorComponent
+  },
+  {
+    path: 'create-assignments',
+    component: CreateAssignmentsComponent
+  },
+  {
+    path: 'grade-assignments',
+    component: GradeAssignmentsComponent
+  }, {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
