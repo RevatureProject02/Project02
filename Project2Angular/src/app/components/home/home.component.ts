@@ -10,11 +10,6 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  buildBar()
-  {
-   
-  }
- 
   ngOnInit() 
   {
     var baseBar = document.getElementById("nav-bar");
@@ -25,5 +20,12 @@ export class HomeComponent implements OnInit {
         case 'professor': baseBar.hidden = true; document.getElementById("professorbar").hidden = false; break; 
         case 'student':  baseBar.hidden = true; document.getElementById("studentbar").hidden = false; break;
     }
+    
+    var LoginName = document.getElementById("Log")
+    if(localStorage.getItem('Username') != null)
+    {
+      LoginName.innerHTML = localStorage.getItem('Username');
+    }
+    
   }
 }

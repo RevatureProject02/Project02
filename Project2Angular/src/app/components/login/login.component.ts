@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
   private router: Router ) { }
 
   ngOnInit() {
-
-
+   
   }
  addAdministrator() {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
@@ -41,13 +40,16 @@ export class LoginComponent implements OnInit {
      const password = target.querySelector('#password').value;
      const role = target.querySelector('input[name="role"]:checked').value;
     this.auth.getUserDetails(username, password, role).subscribe(data => {
-      if(data.success) {
-        localStorage.setItem('User',username);
+      if(data.success) 
+      {
+        localStorage.setItem('Username',username);
         localStorage.setItem('Password',password);
         localStorage.setItem('Role',role);
         this.router.navigate(['/home'])
         this.auth.setLoggedIn(true);
-      }else{
+      }
+      else
+      {
         window.alert(data.message);
       }
     }) 

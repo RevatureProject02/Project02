@@ -11,7 +11,12 @@ export class StudentGradesComponent implements OnInit {
 
   constructor(private s: StudentService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+        document.getElementById("student").innerHTML = localStorage.getItem("Username") + 'grades';
+
+      var gradeSheet =   document.getElementById("GradeSheet");
+      var gradeList = document.getElementById("CourseList");
   }
 
 }

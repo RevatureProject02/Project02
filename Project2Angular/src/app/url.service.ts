@@ -8,6 +8,7 @@ export class UrlService {
   public addCourse: string = this.base + "course/add/";
   //public delete: string = this.base + "delete/";
   public showCourses: string = this.base + "course/all/";
+  public showCoursesOfStudents: string = this.base + "student/courseList";
   public addMeeting: string = this.base + "meeting/add/";
   public showMeetings: string = this.base + "meeting/all/";
 
