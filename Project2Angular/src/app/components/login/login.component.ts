@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   private router: Router ) { }
 
   ngOnInit() {
-   localStorage.setItem('Role','advisor');
   }
  addAdministrator() {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
@@ -47,13 +46,13 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home'])
         this.auth.setLoggedIn(true);
       }else if(data.key == "Advisor") {
-        this.router.navigate(['home'])
+       
         this.auth.setLoggedIn(true);
       }else if(data.key == "Professor") {
         this.router.navigate(['home'])
         this.auth.setLoggedIn(true);
       }else{
-        alert("You shall not paaaaaassssss!!")
+        alert("Incorrect credentials!!")
       }
     }) 
   }
