@@ -34,6 +34,7 @@ public class Student implements Serializable
 	@Column(name="s_age")
 	private int age;
 	
+
 	@Column(name="s_username",unique=true)
 	private String username;
 	

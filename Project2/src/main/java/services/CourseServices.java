@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.api.services.calendar.model.Event;
+
+import factory.EventFactory;
 import model.Course;
 import model.Student;
 import repositories.CourseRepository;
@@ -28,6 +31,7 @@ public class CourseServices
 	//Save
 	public void addCourse(Course c)
 	{
+		Event event = EventFactory.getEvent(c);
 		cr.persistCourse(c);
 	}
 	//Delete

@@ -27,7 +27,7 @@ import services.CourseServices;
 import services.StudentServices;
 
 @Controller
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*", value = "*")
 @RequestMapping("student")
 public class StudentController 
 {
@@ -89,7 +89,7 @@ public class StudentController
 		}
 	}
 	//Insert
-	@RequestMapping(value = "/add",method = RequestMethod.GET)
+	@RequestMapping(value = "/add",method = RequestMethod.POST)
 	@ResponseBody
 	public void addStudent(@RequestBody Student s)
 	{
@@ -107,13 +107,5 @@ public class StudentController
 	public List<Course> getCoursesOfStudent(@RequestBody Student s)
 	{
 		return new CourseServices().getAllCoursesOfStudent(s);
-	}
-	
-	@GetMapping(value = "/grades")
-	public List<Assignment> getAssignemts(@RequestBody Course c)
-	{
-		return new AssignmentServices().getAssignmentsOfCourse(c);
-	}
-
-	
+	}	
 }

@@ -11,14 +11,15 @@
   <div>
   <label for="days">Days of the Week</label>
 	<select id="days" name="days" [(ngModel)]=model.days>
-    <option value="MO, WE, FR">Mo/We/Fr</option>
-    <option value="MO, WE">Mo/We</option>
+    <option value="MO,WE,FR">Mo/We/Fr</option>
+    <option value="MO,WE">Mo/We</option>
     <option value="MO">Mo</option>
-    <option value="TU, TH">Tu/Th</option>
-    <option value="TU, TH, FR">Tu/Th/Fr</option>
-    <option value="MO, WE, TH">Mo/We/Th</option>
+    <option value="TU,TH">Tu/Th</option>
+    <option value="TU,TH,FR">Tu/Th/Fr</option>
+    <option value="MO,WE,TH">Mo/We/Th</option>
 
-	</select>
+  </select>
+
   </div>
   <div>
 	<label for="time" >Time:</label>
@@ -40,6 +41,12 @@
     <option value="2019-05-12T21:00:00">9:00pm</option>
 
 </select>
+<div>
+  <label for="professor">Choose a Professor for this Course:</label>
+  <select id="professor2" name="professor2">
+    <option *ngFor="let professor of professor_list">{{professor.name}}</option>
+  </select>
+
 <form>
     <button (click)=showCourses()>Current Courses</button>
     <div *ngFor="let course of course_list">

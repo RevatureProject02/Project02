@@ -22,7 +22,8 @@ import services.ProfessorServices;
 
 @Controller
 @RequestMapping("professor")
-@CrossOrigin
+@CrossOrigin(origins= "*", allowedHeaders = "*", value = "*")
+
 public class ProfessorController 
 {
 

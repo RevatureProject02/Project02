@@ -3,7 +3,7 @@ import { Administrator } from 'src/app/administrator';
 import { AdministratorService } from 'src/app/administrator.service';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
-// import { resolve } from 'path';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model = new Administrator(0, "name", 0, "username", "password", "email")
+  model = new Administrator(0, "", null, "", "", "")
 
   flip() {
     document.getElementById("form").style.transform = 'rotateY(180deg)';
@@ -23,32 +23,36 @@ export class LoginComponent implements OnInit {
   private router: Router ) { }
 
   ngOnInit() {
-
-
   }
  addAdministrator() {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})
-    this.model = new Administrator(0, "", 0, "", "", "")
+    this.model = new Administrator(0, "", null, "", "", "")
   }
-
-
   loginUser(event){
     // event.preventDefault();
-      
-    
-     const target = event.target;
-     const username = target.querySelector('#username').value;
-     const password = target.querySelector('#password').value;
-     const role = target.querySelector('input[name="role"]:checked').value;
-    this.auth.getUserDetails(username, password, role).subscribe(data => {
-      if(data.success) {
-        localStorage.setItem('User',username);
-        localStorage.setItem('Password',password);
-        localStorage.setItem('Role',role);
-        this.router.navigate(['/home'])
+    const target = event.target;
+    const username = target.querySelector('#username').value;
+    const password = target.querySelector('#password').value;
+    const role = target.querySelector('input[name="role"]:checked').value;
+    this.auth.getUserDetails(username, password, role).subscribe(data => { 
+    localStorage.setItem("Username",username);
+     localStorage.setItem("Password",password);
+     localStorage.setItem("Role",role);
+      console.log(data.key);
+      if(data.key == "Administrator") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Student") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Advisor") {
+       
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Professor") {
+        this.router.navigate(['home'])
         this.auth.setLoggedIn(true);
       }else{
-        window.alert(data.message);
+        alert("Incorrect credentials!!")
       }
     }) 
   }
