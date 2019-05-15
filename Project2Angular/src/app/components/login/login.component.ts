@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   private router: Router ) { }
 
   ngOnInit() {
-   
+   localStorage.setItem('Role','advisor');
   }
  addAdministrator() {
     this.as.addAdministrator(this.model).subscribe(x=>{"This does nothing"})

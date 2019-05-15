@@ -27,7 +27,11 @@ public class Advisor implements Serializable
 	@Column(name="adv_age")
 	private int age;
 	
+<<<<<<< HEAD
+	@Column(name="adv_username", unique=true)
+=======
 	@Column(name="adv_username",unique=true)
+>>>>>>> 3ad7e8fda75f1997ff40353acf09ad83d77f09a9
 	private String username;
 	
 	@Column(name="adv_password")
