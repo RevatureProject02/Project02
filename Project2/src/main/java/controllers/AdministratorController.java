@@ -2,7 +2,10 @@ package controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Administrator;
-import model.Advisor;
 import services.AdministratorServices;
 
 @RestController
@@ -36,8 +38,8 @@ public class AdministratorController {
 		return as.getAdministratorById(id);
 	}
 
-	@PostMapping("/add")
-	public void insertAdministrator(@RequestBody Administrator a) {
+	@GetMapping("/add")
+	public void insertAdministrator(@RequestBody @Valid Administrator a) {
 		as.addAdministrator(a);
 	}
 
@@ -52,12 +54,14 @@ public class AdministratorController {
 		as.deleteAdministratorById(id);
 	}
 
-	@PostMapping("/login")
+	@CrossOrigin
+	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public boolean validateAdministrator(@RequestBody MultiValueMap<String, String> fromParams) {
 		String username = fromParams.getFirst("username");
 		String password = fromParams.getFirst("password");
 		boolean isValid = false;
-
+		
+		System.out.println("username: "+username + " password " + password);
 		for (Administrator a : as.getAllAdministrators()) {
 			if (a.getUsername().equals(username)) {
 				// Define the Session as an administrator, hold onto the administrator
@@ -73,5 +77,6 @@ public class AdministratorController {
 				}
 			}
 		}return isValid;
+
 	}
 }

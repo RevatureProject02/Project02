@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UrlService } from './url.service';
 
 interface myData {
@@ -13,9 +13,12 @@ interface myData {
 })
 export class AuthService {
 
+  headers = new HttpHeaders();
   private loggedInStatus = false;
 
-  constructor(private http: HttpClient, private url: UrlService) { }
+  constructor(private http: HttpClient, private url: UrlService) {
+    this.headers.append('Content-Type', 'application/json')
+   }
 
   setLoggedIn(value: boolean) {
     this.loggedInStatus = value;
@@ -27,19 +30,18 @@ export class AuthService {
 
   getUserDetails(username, password, role) {
     if (role == "admin") {
-      return this.http.post<myData>(this.url.adminLogin, {
-        username, password, role
-      })
+      return this.http.post<any>(this.url.adminLogin, {
+        username, password, role})
     } else if (role == "advisor") {
-      return this.http.post<myData>(this.url.advisorLogin, {
+      return this.http.put<any>(this.url.advisorLogin, {
         username, password, role
       })
     } else if (role == "professor") {
-      return this.http.post<myData>(this.url.profLogin, {
+      return this.http.put<any>(this.url.profLogin, {
         username, password, role
       })
     } else if (role == "student") {
-      return this.http.post<myData>(this.url.studentLogin, {
+      return this.http.put<any>(this.url.studentLogin, {
         username, password, role
       })
     } else {

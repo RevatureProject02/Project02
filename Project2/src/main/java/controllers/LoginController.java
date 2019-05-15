@@ -27,7 +27,7 @@ public class LoginController
 	@Autowired
 	AdministratorServices ads;
 	
-	@RequestMapping ("/LoginServer")
+	@RequestMapping ("/login")
 	@ResponseBody
 	public String handLogin(@RequestBody MultiValueMap<String,String> formParams)
 	{
