@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: candace
 Build-Jdk: 10.0.2
+=======
+Built-By: User
+Build-Jdk: 1.8.0_201
+>>>>>>> f63ef46b2125d166bd6dd4103dafde41084d0d90
 Created-By: Maven Integration for Eclipse
 

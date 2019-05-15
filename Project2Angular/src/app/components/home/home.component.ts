@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
   {
     var baseBar = document.getElementById("nav-bar");
     var adminBar = document.getElementById("adminbar");
-    var advisorBar = document.getElementById("advisorBar");
-    var studentBar = document.getElementById('studentBar');
-    var professorBar = document.getElementById('professorBar');
+    var advisorBar = document.getElementById("advisorbar");
+    var studentBar = document.getElementById('studentbar');
+    var professorBar = document.getElementById('professorbar');
     switch(localStorage.getItem('Role'))
     {
         case 'admin': baseBar.hidden = true; adminBar.hidden = false; break;
