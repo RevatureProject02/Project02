@@ -22,7 +22,7 @@ public class AdministratorServices
 	}
 	public List<Administrator> getAllAdministrators()
 	{
-		List<Administrator> admins = new ArrayList<>();
+//		List<Administrator> admins = new ArrayList<>();
 		return ar.getAllAdministrators();
 		
 	}

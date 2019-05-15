@@ -22,7 +22,7 @@ import services.AdministratorServices;
 
 @RestController
 @RequestMapping("/administrator")
-@CrossOrigin
+@CrossOrigin(origins= "*", allowedHeaders = "*", value = "*")
 public class AdministratorController {
 
 	@Autowired
@@ -38,8 +38,8 @@ public class AdministratorController {
 		return as.getAdministratorById(id);
 	}
 
-	@GetMapping("/add")
-	public void insertAdministrator(@RequestBody @Valid Administrator a) {
+	@PostMapping("/add")
+	public void insertAdministrator(@RequestBody Administrator a) {
 		as.addAdministrator(a);
 	}
 
@@ -54,29 +54,5 @@ public class AdministratorController {
 		as.deleteAdministratorById(id);
 	}
 
-	@CrossOrigin
-	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public boolean validateAdministrator(@RequestBody MultiValueMap<String, String> fromParams) {
-		String username = fromParams.getFirst("username");
-		String password = fromParams.getFirst("password");
-		boolean isValid = false;
-		
-		System.out.println("username: "+username + " password " + password);
-		for (Administrator a : as.getAllAdministrators()) {
-			if (a.getUsername().equals(username)) {
-				// Define the Session as an administrator, hold onto the administrator
-				Administrator sessionAdministrator = a;
-				if (a.getPassword().equals(password)) {
-					// Allow login
-					isValid = true;
-//					return isValid;
-				} else {
-					// Tell the user that they entered incorrect information
-					isValid = false;
-//					return isValid;
-				}
-			}
-		}return isValid;
-
-	}
+	
 }

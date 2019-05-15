@@ -37,11 +37,21 @@ export class LoginComponent implements OnInit {
     const password = target.querySelector('#password').value;
     const role = target.querySelector('input[name="role"]:checked').value;
     this.auth.getUserDetails(username, password, role).subscribe(data => {
-      if(data.success) {
+      console.log(data.key);
+      if(data.key == "Administrator") {
         this.router.navigate(['admin'])
         this.auth.setLoggedIn(true);
+      }else if(data.key == "Student") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Advisor") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
+      }else if(data.key == "Professor") {
+        this.router.navigate(['home'])
+        this.auth.setLoggedIn(true);
       }else{
-        window.alert(data.message);
+        alert("You shall not paaaaaassssss!!")
       }
     })
     console.log(username, password, role);

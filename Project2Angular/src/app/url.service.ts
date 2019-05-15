@@ -30,7 +30,7 @@ export class UrlService {
   //Logins
   public advisorLogin: string = this.base + "advisor/Login";
   public profLogin: string =  this.base + "professor/login";
-
+  public login: string = this.base + "/loginController/login"
   //advisor
 
 

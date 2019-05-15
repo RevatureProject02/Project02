@@ -34,11 +34,8 @@ public class Professor implements Serializable
 	@Column(name="p_age")
 	private int age;
 	
-<<<<<<< HEAD
-	@Column(name="p_username", unique = true)
-=======
+
 	@Column(name="p_username",unique=true)
->>>>>>> bd90451542ae93abd950dd1fcad645b3aee2e7cd
 	private String username;
 	
 	@Column(name="p_password")
