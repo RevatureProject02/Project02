@@ -16,23 +16,33 @@
                     <input class="radio" id="advisor" type="radio" name="role" value="advisor">Advisor
                     <input class="radio" id="professor" type="radio" name="role" value="professor">Prof
                     <button type="submit" class="btn1">Login</button><br>
-                    
+
                 </form>
             </div>
         </div>
 
         <div class="back">
             <div class="left">
-                <div class="title2" id = 'check'>Already have an account?</div>
+                <div class="title2" id='check'>Already have an account?</div>
                 <button class="btn2" (click)="flip1()">Login</button>
             </div>
             <div class="right">
-                <form>
-                    <input type="text" name="name" [(ngModel)]="model.name" placeholder="Name"><br><br>
-                    <input type="number" name="age" [(ngModel)]="model.age" placeholder="Age"><br><br>
-                    <input type="text" name="username" [(ngModel)]="model.username" placeholder="Username"><br><br>
-                    <input type="text" name="email" [(ngModel)]=model.email placeholder="Email"><br><br>
-                    <input type="password" name="password" [(ngModel)]="model.password" placeholder="password"><br><br>
+                <form ngNoform>
+                    <label for="name">Name
+                        <input type="text"   [(ngModel)]="model.name" name="name">
+                    </label><br>
+                    <label for="age">age
+                        <input type="number"  [(ngModel)]="model.age" name="age">
+                    </label><br>
+                    <label for="username">Username
+                        <input type="text"  [(ngModel)]="model.username" name="username">
+                    </label><br>
+                    <label for="email">Email
+                        <input type="text"  [(ngModel)]=model.email name="email">
+                    </label><br>
+                    <label for="password">Password
+                        <input type="password"  [(ngModel)]="model.password" name="password">
+                    </label><br>
                     <!-- <input type="password" name="password2" [(ngModel)]="model-password"
                         placeholder="Repeat Password"><br><br> -->
                     <button class="btn1" (click)="addAdministrator()">Register</button>

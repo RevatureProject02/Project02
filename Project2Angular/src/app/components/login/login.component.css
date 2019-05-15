@@ -23,7 +23,7 @@ input.radio{
 .form{
     height: 100%;
     width: 100%; 
-    position: relative;
+    position:relative;
     transform-style:preserve-3d; 
     transition: 1s ease-in;
     
@@ -32,7 +32,7 @@ input.radio{
 .front, .back{
     background-color: #ffffff;
     text-align: center; 
-    height: 350px;
+    height: 450px;
     width: 600px;
     backface-visibility: hidden;
     
@@ -59,7 +59,10 @@ input.radio{
     padding-top: 115px;
     padding-left: 20px;
 }
-
+.back > .right{
+    position: relative;
+    bottom: 525px;
+}
 input{
     width: 260px;
     border: none;
