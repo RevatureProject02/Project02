@@ -22,9 +22,10 @@ export class UrlService {
   public addStudent: string = this.base + "student/add";
   public showStudents: string = this.base + "student/all";
   public studentLogin: string = this.base + "student/login";
+  public showGrades: string = this.base + "student/grades";
 
   //Professor methods
-  public addProfessor: string = this.base + "Professor/add";
+  public addProfessor: string = this.base + "professor/add";
   public showProfessors: string = this.base + "professor/all";
 
   //Logins
