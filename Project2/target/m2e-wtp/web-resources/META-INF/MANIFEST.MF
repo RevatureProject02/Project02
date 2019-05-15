@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: Sal
-=======
-Built-By: RicoM
->>>>>>> 040a9603f0a5176546e100902ebe1fd84017b7be
+Built-By: User
 Build-Jdk: 1.8.0_201
 Created-By: Maven Integration for Eclipse
 
