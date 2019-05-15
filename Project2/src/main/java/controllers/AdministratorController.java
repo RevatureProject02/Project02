@@ -2,7 +2,10 @@ package controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,12 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Administrator;
-import model.Advisor;
 import services.AdministratorServices;
 
 @RestController
 @RequestMapping("/administrator")
-@CrossOrigin
+@CrossOrigin(origins= "*", allowedHeaders = "*", value = "*")
 public class AdministratorController {
 
 	@Autowired
@@ -52,26 +54,5 @@ public class AdministratorController {
 		as.deleteAdministratorById(id);
 	}
 
-	@PostMapping("/login")
-	public boolean validateAdministrator(@RequestBody MultiValueMap<String, String> fromParams) {
-		String username = fromParams.getFirst("username");
-		String password = fromParams.getFirst("password");
-		boolean isValid = false;
-
-		for (Administrator a : as.getAllAdministrators()) {
-			if (a.getUsername().equals(username)) {
-				// Define the Session as an administrator, hold onto the administrator
-				Administrator sessionAdministrator = a;
-				if (a.getPassword().equals(password)) {
-					// Allow login
-					isValid = true;
-//					return isValid;
-				} else {
-					// Tell the user that they entered incorrect information
-					isValid = false;
-//					return isValid;
-				}
-			}
-		}return isValid;
-	}
+	
 }

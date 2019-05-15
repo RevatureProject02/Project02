@@ -20,6 +20,6 @@ export class AdministratorService {
    }
 
    addAdministrator(a: Administrator): Observable<any>{
-     return this.http.post(this.url.addAdmin, a, {headers: this.headers})
+     return this.http.post(this.url.addStudent, a, {headers: this.headers})
    }
 }
