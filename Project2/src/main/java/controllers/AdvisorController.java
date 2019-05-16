@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Advisor;
 import services.AdvisorServices;
+import services.Encryptor;
 
 @Controller
 @RequestMapping("advisor")
@@ -40,6 +41,7 @@ public class AdvisorController{
 	@PostMapping(value="/addAdvisor")
 	@ResponseBody
 	public void insertAdvisor(@RequestBody Advisor a) {
+		a.setPassword(new Encryptor().Encrypt(a.getPassword()));
 		as.insertAdvisor(a);
 	}
 	

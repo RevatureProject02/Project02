@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import model.Administrator;
 import services.AdministratorServices;
+import services.Encryptor;
 
 @RestController
 @RequestMapping("/administrator")
@@ -40,6 +41,7 @@ public class AdministratorController {
 
 	@PostMapping("/add")
 	public void insertAdministrator(@RequestBody Administrator a) {
+		a.setPassword(new Encryptor().Encrypt(a.getPassword()));
 		as.addAdministrator(a);
 	}
 

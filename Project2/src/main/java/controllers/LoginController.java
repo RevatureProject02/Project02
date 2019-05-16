@@ -18,6 +18,7 @@ import model.Student;
 import model.User;
 import services.AdministratorServices;
 import services.AdvisorServices;
+import services.Encryptor;
 import services.ProfessorServices;
 import services.StudentServices;
 
@@ -38,7 +39,7 @@ public class LoginController {
 	@PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, String> handLogin(@RequestBody User u) {
 		String Username = u.getUsername();
-		String Password = u.getPassword();
+		String Password = new Encryptor().Encrypt(u.getPassword());
 		String role = u.getRole();
 		System.out.println(Username + " " + Password + " " + role);
 		// This will go through until true (then that defines permissions)

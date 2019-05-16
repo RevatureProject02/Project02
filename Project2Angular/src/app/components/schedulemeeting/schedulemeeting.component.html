@@ -1,17 +1,27 @@
+<div class="jumbotron" style="margin-bottom:0">
+    <h1 id = 'Log'>M.E.I</h1>
+    <h6>Modern Education Integration</h6>
+</div>
+<app-student-navbar id='studentbar'></app-student-navbar>
+ <div class="container-fluid" style=background-color:blanchedalmond>
  <form>
- <div>
+   <div class="row">
+     <div class="col-lg-3"></div>
+     <div class="col-lg-6">
+ <div class="form-group">
     <label for="summary">Reason for Meeting:</label>
-    <input type="text" name="summary" id="summary" [(ngModel)]=model.summary>
+    <input type="text" name="summary" id="summary" class="form-control" [(ngModel)]=model.summary>
   </div>
-  <div>
-	<label for="professor">Select the Professor you would like to Meet with:
-    <select name="professor1" [(ngModel)]=model.professor1>
+  <div class="form-group">
+	<label for="professor">Select the Professor you would like to Meet with:</label>
+    <select name="professor1"  [(ngModel)]=model.professor1 class="form-control">
       <option></option>
       <option *ngFor="let professor of professor_list" (change)="getAttendingProfessor()">{{professor.name}}</option>
-	`</select>
-  <div>
-	<label for="time">Select a Start Time:
-    <select id="time" name="time" [(ngModel)]=model.time>
+  </select>
+</div>
+  <div class="form-group">
+	<label for="time">Select a Start Time:</label>
+    <select id="time" name="time" class="form-control" [(ngModel)]=model.time>
         <option value="T09:00:00">9:00am</option>
         <option value="T09:30:00">9:30am</option>
         <option value="T10:00:00">10:00am</option>
@@ -29,26 +39,29 @@
         <option value="T16:00:00">4:00pm</option>
         <option value="T16:30:00">4:30pm</option>
 </select>
-<form>
-  <div>
-      <label for="location">Pick a Location:
-      <select id="location" name="location" [(ngModel)]=model.location>
-        <option name="professorsOffice">Professor's Office</option>
-        <option name="advisorsOffice">Advisor's Office</option>
-      
-    
-   <div>
-     <label for="myDate">Enter a Date:
-     <input type="text" name="myDate" id="myDate" [(ngModel)]=model.myDate>
-   <div>
-       <label for="location">Pick a Location:
-       <select id="location" name="location" [(ngModel)]=model.location>
+</div>
+   <div class="form-group">
+     <label for="myDate">Enter a Date:</label>
+     <input type="text" name="myDate" id="myDate" class="form-control" [(ngModel)]=model.myDate>
+     </div>
+   <div class="form-group">
+       <label for="location">Pick a Location:</label>
+       <select id="location" name="location" class="form-control" [(ngModel)]=model.location>
          <option value="Office">Office</option>
        </select>
-  
-   <button (click)=insertMeeting()>Add to Schedule</button>
-   <button (click)=showMeetings()>Show Meetings</button>
-   <div *ngFor="let meeting of meeting_list">
-       <p>{{meeting | json}}</p>
- 
+       </div>
+  <div class="form-group">
+      <button (click)=insertMeeting() class="form-control">Add to Schedule</button>
+  </div>
 
+   <div  class="form-group" *ngFor="let meeting of meeting_list">
+       <p>{{meeting | json}}</p>
+       </div>
+      </div>
+      <div class="col-lg-3">
+      </div>
+      </div>
+
+ </form>
+
+</div>
