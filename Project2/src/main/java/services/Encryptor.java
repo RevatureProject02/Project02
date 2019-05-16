@@ -16,3 +16,4 @@ public class Encryptor
 		return string;
 	}
 }
+

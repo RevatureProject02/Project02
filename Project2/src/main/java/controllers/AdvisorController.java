@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Advisor;
@@ -41,6 +40,7 @@ public class AdvisorController{
 	@PostMapping(value="/addAdvisor")
 	@ResponseBody
 	public void insertAdvisor(@RequestBody Advisor a) {
+
 		a.setPassword(new Encryptor().Encrypt(a.getPassword()));
 		as.insertAdvisor(a);
 	}

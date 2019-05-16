@@ -43,6 +43,7 @@ public class ProfessorController
 	
 	@PostMapping(value="/add")
 	public void insertProfessor(@RequestBody Professor p) {
+
 		p.setPassword(new Encryptor().Encrypt(p.getPassword()));
 		ps.insertProfessor(p);
 	}
