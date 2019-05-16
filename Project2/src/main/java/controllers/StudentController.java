@@ -67,27 +67,34 @@ public class StudentController
 	{
 		ss.deleteStudentById(id);
 	}
+	@PostMapping(value="/addCourse")
+	@ResponseBody
+	public void addCourse(@RequestBody Course course, @RequestBody Student student)
+	{
+		ss.addCourse(course, student);
+		
+	}
 	//JSON TEST INSERT
 	//@RequestMapping(value = "/addJSON",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
-	@PostMapping(value = "/addJSON")
-	@ResponseBody
-	public String handleJSONAdd(@RequestBody @Valid Student s, Errors errors)
-	{
-		if(errors.hasErrors())
-		{
-			for(ObjectError e: errors.getAllErrors())
-				System.err.println(e);
-			return "Student is invalid";
-		}
-		try {
-			ss.addStudent(s);
-			return "Student added!";
-		}
-		catch (Exception e)
-		{
-			return "Student creation Failed!";
-		}
-	}
+//	@PostMapping(value = "/addJSON")
+//	@ResponseBody
+//	public String handleJSONAdd(@RequestBody @Valid Student s, Errors errors)
+//	{
+//		if(errors.hasErrors())
+//		{
+//			for(ObjectError e: errors.getAllErrors())
+//				System.err.println(e);
+//			return "Student is invalid";
+//		}
+//		try {
+//			ss.addStudent(s);
+//			return "Student added!";
+//		}
+//		catch (Exception e)
+//		{
+//			return "Student creation Failed!";
+//		}
+//	}
 	//Insert
 	@RequestMapping(value = "/add",method = RequestMethod.POST)
 	@ResponseBody
@@ -108,4 +115,5 @@ public class StudentController
 	{
 		return new CourseServices().getAllCoursesOfStudent(s);
 	}	
+	
 }

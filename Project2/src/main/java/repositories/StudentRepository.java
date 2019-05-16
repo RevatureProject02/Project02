@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import model.Course;
 import model.Student;
 
 @Transactional
@@ -54,4 +55,13 @@ public class StudentRepository
 		Session s = sf.getCurrentSession();
 		s.save(student);
 	}
+	
+	public String addCourse(Course course) 
+	{
+		Session s = sf.getCurrentSession();
+		s.persist(course);
+		return "added";
+		
+	}
+	
 }

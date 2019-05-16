@@ -48,7 +48,7 @@ public class Student implements Serializable
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany()
 	@JoinTable(name="student_course_jt",
-	joinColumns = @JoinColumn(name = "s_id"),
+	joinColumns = @JoinColumn(name = "s_id"), // column for students table
 	inverseJoinColumns=@JoinColumn(name="c_id"))
 	private List<Course> Courses;
 
@@ -126,7 +126,10 @@ public class Student implements Serializable
 	public void setCourses(List<Course> courses) {
 		Courses = courses;
 	}
-
+	public void addCoures(Course course)
+	{
+		Courses.add(course);
+	}
 	public String getEmail() {
 		return email;
 	}

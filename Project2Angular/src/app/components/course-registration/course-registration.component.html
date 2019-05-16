@@ -13,11 +13,16 @@
     <option *ngFor="let course of availableCourses">{{course.name}} id: {{course.id}}</option>
   </select>
 </div>
-<br>
 
-<h3>Add/Drop </h3>
-<ul>
-  <li *ngFor="let course of availableCourses">
-   <label>{{course.name}}</label><label>{{course.id}}</label><button>add</button><button>drop</button>
-    </li>
-</ul>
+<h3>Add </h3>
+
+<div>
+<label for="age">Course ID: </label>
+  <input type="number" id="courseId" name="courseId" [(ngModel)]=courseModel.courseId>
+  
+
+      <label for="username">Student ID: </label>
+      <input type="text" id="studentId" name="studentId" [(ngModel)]=courseModel.studentId>
+  
+  <button (click)="addNewCourse">add</button>
+</div>

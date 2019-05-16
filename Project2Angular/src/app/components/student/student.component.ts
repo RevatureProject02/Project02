@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from 'src/app/student';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
+
+
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+
+  
+  constructor(route: ActivatedRoute) { 
+  }
 
   ngOnInit() {
   }

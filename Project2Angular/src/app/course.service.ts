@@ -3,6 +3,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from './course';
 import { UrlService } from './url.service';
+import { Student } from './student';
+import { studentCorse } from './studentcourse';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +29,10 @@ export class CourseService {
   {
     return this.http.get(this.url.showCoursesOfStudents, {responseType: 'text', headers: this.headers});
   }
+
+  addNewCourse(course: studentCorse): Observable<any>
+    {
+      return this.http.post(this.url.addNewCourse, course);
+
+    } 
 }

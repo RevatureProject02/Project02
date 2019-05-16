@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import model.Course;
 import model.Student;
 import repositories.StudentRepository;
 @Service
@@ -42,4 +43,7 @@ public class StudentServices
 		sr.updateStudent(s);
 	}
 	
+	public void addCourse(Course course, Student student) {
+		sr.addCourse(course, student);
+	}
 }
