@@ -56,7 +56,7 @@ public class StudentRepository
 		s.save(student);
 	}
 	
-	public String addCourse(Course course) 
+	public String addCourse(Course course,Student student) 
 	{
 		Session s = sf.getCurrentSession();
 		s.persist(course);
