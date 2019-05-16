@@ -1,3 +1,7 @@
+<div class="jumbotron" style="margin-bottom:0">
+    <h1 id = 'Log'>M.E.I</h1>
+    <h6>Modern Education Integration</h6>
+</div>
  <form>
       <button (click)=insertCourse()>Add Course to DB</button>
   <div>
@@ -17,9 +21,7 @@
     <option value="TU,TH">Tu/Th</option>
     <option value="TU,TH,FR">Tu/Th/Fr</option>
     <option value="MO,WE,TH">Mo/We/Th</option>
-
   </select>
-
   </div>
   <div>
 	<label for="time" >Time:</label>
@@ -39,18 +41,20 @@
     <option value="2019-05-12T19:00:00">7:00pm</option>
     <option value="2019-05-12T20:00:00">8:00pm</option>
     <option value="2019-05-12T21:00:00">9:00pm</option>
-
 </select>
+</div>
 <div>
   <label for="professor">Choose a Professor for this Course:</label>
   <select id="professor2" name="professor2">
     <option *ngFor="let professor of professor_list">{{professor.name}}</option>
   </select>
-
-<form>
+</div>
     <button (click)=showCourses()>Current Courses</button>
     <div *ngFor="let course of course_list">
         <p>{{course | json}}</p>
+    </div>
+</form>
+        
         
      
 

@@ -24,6 +24,7 @@ import model.Course;
 import model.Student;
 import services.AssignmentServices;
 import services.CourseServices;
+import services.Encryptor;
 import services.StudentServices;
 
 @Controller
@@ -100,6 +101,7 @@ public class StudentController
 	@ResponseBody
 	public void addStudent(@RequestBody Student s)
 	{
+		s.setPassword(new Encryptor().Encrypt(s.getPassword()));
 		ss.addStudent(s);
 	}
 	//update

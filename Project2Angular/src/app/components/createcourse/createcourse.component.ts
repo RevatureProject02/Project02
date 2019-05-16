@@ -13,7 +13,7 @@ export class CreatecourseComponent implements OnInit {
   
   course_list = [];
   professor_list = [];
-  model = new Course(0, "name", "time", "location", "days");
+  model = new Course(0, "", "", "", "");
   constructor(private cs: CourseService, private ps:ProfessorService) { }
 
   ngOnInit() {

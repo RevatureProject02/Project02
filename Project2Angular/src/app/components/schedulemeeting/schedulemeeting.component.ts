@@ -16,7 +16,7 @@ export class SchedulemeetingComponent implements OnInit {
   professors = [];
   advisors = [];
   
-  model = new Meeting(0, "summary", "myDate", "time", "location", this.advisors,  this.professors);
+  model = new Meeting(0, "", "yyyy-MM-dd", "time", "location", this.advisors,  this.professors);
   constructor(private ms: MeetingService, private ps: ProfessorService) { }
 
   ngOnInit() {
