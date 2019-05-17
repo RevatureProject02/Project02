@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from './course';
 import { UrlService } from './url.service';
@@ -26,5 +26,9 @@ export class CourseService {
   showCoursesOfStudent(): Observable<any>
   {
     return this.http.get(this.url.showCoursesOfStudents, {responseType: 'text', headers: this.headers});
+  }
+  deleteCourse(i: any) {
+    let params = new HttpParams().set("id",i);
+    return this.http.delete(this.url.deleteCourseById, {headers: this.headers, params: params});
   }
 }

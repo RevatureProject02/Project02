@@ -18,7 +18,7 @@ export class CreatecourseComponent implements OnInit {
 
   ngOnInit() {
     this.getProfessors();
-
+    this.showCourses();
   }
   insertCourse(){
     //this.model = new Course(0, "name", "time", "location", "days");
@@ -31,5 +31,8 @@ export class CreatecourseComponent implements OnInit {
   }
   getProfessors(){
     this.ps.getProfessors().subscribe(x => this.professor_list = JSON.parse(x));
+  }
+  deleteCourse(i){
+    this.cs.deleteCourse(this.course_list[i].id).subscribe(x=>{"course deleted"});
   }
 }

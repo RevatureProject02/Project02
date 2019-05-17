@@ -20,12 +20,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import model.Course;
 import services.CourseServices;
 
-@Controller
+@RestController
 @RequestMapping("course")
 @CrossOrigin(origins= "*", allowedHeaders = "*", value = "*")
 public class CourseController {
@@ -49,6 +51,11 @@ public class CourseController {
 		cs.deleteCourseById(id);
 	}
 
+	@DeleteMapping(value="/delete")
+	public void deleteById(@RequestParam int id) {
+		System.out.println(id);
+		cs.deleteCourseById(id);
+	}
 	// Insert
 	@PostMapping(value = "/add")
 	@ResponseBody

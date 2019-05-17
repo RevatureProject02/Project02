@@ -46,6 +46,7 @@ export class UrlService {
   public addCourse: string = this.base + "course/add/";
   public deleteCourse: string = this.base + "course/delete/{id}/";
   public updateCourse: string = this.base + "course/update/";
+  public deleteCourseById: string = this.base + "course/delete/";
 
 
   constructor() { }

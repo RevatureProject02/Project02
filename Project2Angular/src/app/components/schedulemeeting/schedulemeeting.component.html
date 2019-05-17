@@ -4,6 +4,7 @@
 </div>
 <app-student-navbar id='studentbar'></app-student-navbar>
  <div class="container-fluid" style=background-color:blanchedalmond>
+    <button type="button" class="btn btn-primary" routerLink="../">BACK</button> 
  <form>
    <div class="row">
      <div class="col-lg-3"></div>
@@ -13,7 +14,7 @@
     <input type="text" name="summary" id="summary" class="form-control" [(ngModel)]=model.summary>
   </div>
   <div class="form-group">
-	<label for="professor">Select the Professor you would like to Meet with:</label>
+	<label for="professor">Select the Person you Would like to Meet with:</label>
     <select name="professor1"  [(ngModel)]=model.professor1 class="form-control">
       <option></option>
       <option *ngFor="let professor of professor_list" (change)="getAttendingProfessor()">{{professor.name}}</option>

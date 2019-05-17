@@ -1,10 +1,11 @@
+<app-admin-navbar></app-admin-navbar>
 <h3>List Of All Advisors</h3>
 <div class="form-group">
-  <label for="sel1">Advisors:</label>
-  <select class="form-control" id="sel2">
-    <option *ngFor="let advisor of availableAdvisors">{{advisor.name}} id:{{advisor.id}}</option>
-  </select>
-  
+ <label for="sel1">Advisors:</label>
+ <select class="form-control" id="sel1">
+   <option *ngFor="let advisor of availableAdvisors">{{advisor.name}} id:{{advisor.id}}</option>
+ </select>
+
 </div>
 
 <br>
@@ -12,19 +13,27 @@
 
 <h3> Add new advisor</h3>
 <form>
-  <div>
-  <label for="name">Name: </label>
-  <input type="text" id="name" name="name" [(ngModel)]=advisorModel.name>
-  </div>
-  <div>
-  <label for="age">Age: </label>
-  <input type="number" id="age" name="age" [(ngModel)]=advisorModel.age>
-  </div>
-  <div>
-  <label for="email">Email: </label>
-  <input type="email" id="email" name="email" [(ngModel)]=advisorModel.email>
-  </div>
-  <button (click)="addAdvisor()"> Add Advisor</button>
+ <div>
+ <label for="name">Name: </label>
+ <input type="text" id="name" name="name" [(ngModel)]=advisorModel.name>
+ </div>
+ <div>
+ <label for="age">Age: </label>
+ <input type="number" id="age" name="age" [(ngModel)]=advisorModel.age>
+ </div>
+ <div>
+     <label for="username">Userame: </label>
+     <input type="text" id="username" name="username" [(ngModel)]=advisorModel.username>
+ </div>
+ <div>
+     <label for="password">Password: </label>
+     <input type="text" id="password" name="password" [(ngModel)]=advisorModel.password>
+     </div>
+ <div>
+ <label for="email">Email: </label>
+ <input type="email" id="email" name="email" [(ngModel)]=advisorModel.email>
+ </div>
+ <button (click)="addAdvisor()"> Add Advisor</button>
 
 </form>
 <br>
@@ -32,8 +41,7 @@
 
 <h3>Delete Advisors</h3>
 <ul>
-  <li *ngFor="let advisor of availableAdvisors">
-    <label>{{advisor.name}}</label><button (click)="deleteAdvisor()">delete</button>
-  </li>
- </ul>
-
+ <li *ngFor="let advisor of availableAdvisors">
+   <label>{{advisor.name}}</label><button (click)="deleteAdvisor()">delete</button>
+ </li>
+</ul>

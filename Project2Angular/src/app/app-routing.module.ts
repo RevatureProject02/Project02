@@ -17,6 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AdvisorComponent } from './components/advisor/advisor.component';
 import { CourseRegistrationComponent } from './components/course-registration/course-registration.component';
+import { ProfessorComponent } from './professor/professor.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,10 @@ const routes: Routes = [
     path: 'grade-assignments',
     component: GradeAssignmentsComponent
   }, {
+    path: 'professor',
+    component: ProfessorComponent
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
